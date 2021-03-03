@@ -103,6 +103,12 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Prefecture must be other than 0')
       end
+
+      it '画像がなければ登録できない' do
+        @user.image = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Image can't be blank")
+      end
     end
   end
 end
