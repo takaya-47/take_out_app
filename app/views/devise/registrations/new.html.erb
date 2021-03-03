@@ -10,7 +10,7 @@
 
 <div class="field">
   <%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <%= f.email_field :email, autocomplete: "email" %>
 </div>
 
 <div class="field">
@@ -28,12 +28,12 @@
 
 <div class="field">
   <%= f.label :category_id %><br />
-  <%= f.collection_select (:category_id, Category.all, :id, :name, {}, {class: "category-select"}) %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-select"}) %>
 </div>
 
 <div class="field">
   <%= f.label :prefecture_id %><br />
-  <%= f.collection_select (:prefecture_id, Prefecture.all, :id, :name, {}, {class: "prefecture-select"}) %>
+  <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "prefecture-select"}) %>
 </div>
 
 <div class="field">
