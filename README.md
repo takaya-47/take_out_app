@@ -2,10 +2,9 @@
 
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
-| name               | string  | null: false               |
+| shop_name          | string  | null: false               |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
-| shop_name          | string  | null: false               |
 | category_id        | integer | null: false               |
 | prefecture_id      | integer | null: false               |
 | address            | string  | null: false               |
