@@ -1,0 +1,29 @@
+<div class="header-container">
+  <div class="header-left">
+    <h1 class="header-logo">Take_Out_App</h1>
+  </div>
+  <div class="header-right">
+    <ul class="header-menu">
+      <% if user_signed_in? %>
+      <li class="menu-list">
+        <%= link_to "メニュー投稿", "#", class: "menu-link" %>
+      </li>
+      <li class="menu-list">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu-link"%>
+      </li>
+      <li class="menu-list">
+        <%= link_to "お問い合わせ", static_pages_contact_path, class: "menu-link"%></li>
+      <% else %>
+      <li class="menu-list">
+        <%= link_to "新規登録", new_user_registration_path, class: "menu-link"%>
+      </li>
+      <li class="menu-list">
+        <%= link_to "ログイン", new_user_session_path, class: "menu-link"%>
+      </li>
+      <li class="menu-list">
+        <%= link_to "お問い合わせ", static_pages_contact_path, class: "menu-link"%></li>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
