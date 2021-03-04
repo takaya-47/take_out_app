@@ -1,3 +1,79 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$theme1: #edd5be;
+$theme2: #eda65f;
+$theme3: #ed7700;
+
+body {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+// users/index.html.erb
+.main-title {
+  margin: 15px 0;
+  text-shadow: $theme1 4px 4px;
+  text-align: center;
+}
+
+.users-index {
+  .users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    .image-box {
+      width: 300px;
+      height: 230px;
+      margin: 10px 20px;
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .info-box {
+      margin: 10px 20px;
+      .shop-name, .category, .full-address, .business-hours, .holiday {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// users/show.html.erb
+.user-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+  .main-image {
+    width:50%;
+    .pic {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .main-info {
+    width: 50%;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin-top: 45px;
+    padding: 20px 0 0 0;
+    .info-box {
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      .icon {
+        margin-right: 20px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

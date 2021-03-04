@@ -1,2 +1,67 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2 class="main-title">店舗詳細</h2>
+<div class="user-show">
+  <div class="main-image">
+    <%= image_tag @user.image, class: "pic" %>
+  </div>
+  <div class="main-info">
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-store fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>店舗名</h4>
+        <p><%= @user.shop_name %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-utensils fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>カテゴリー</h4>
+        <p><%= @user.category.name %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-map-marker-alt fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>住所</h4>
+        <p><%= @user.prefecture.name %><%= @user.address %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-door-open fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>営業時間</h4>
+        <p><%= @user.business_hours %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-door-closed fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>定休日</h4>
+        <p><%= @user.holiday %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-phone fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>電話番号</h4>
+        <p><%= @user.phone_number %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="main-title">提供中のメニュー</h2>
+<div class="hoge">
+  メニューを並びで表示する
+</div>

@@ -1,7 +1,6 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// 共通する部品に関するレイアウトを記述
 
 $theme1: #edd5be;
 $theme2: #eda65f;
@@ -12,6 +11,7 @@ body {
   margin: 0 auto;
 }
 
+// 共通する部品に関するレイアウトを記述
 .header-container {
   background-color: $theme1;
   display: flex;
