@@ -3,16 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // ヘッダーとフッターも含めて記述
 
-$blue: #192f60;
-$red: #6c272d;
-$yellow: #fff1cf;
+$theme1: #edd5be;
+$theme2: #eda65f;
+$theme3: #ed7700;
 
-header {
-  width: 80vw;
-  margin: 0 auto;
   .header-container {
-    background-color: $blue;
-    color: white;
+    background-color: $theme1;
+    color: $theme3;
     display: flex;
     justify-content: space-between;
     padding: 10px 50px;
@@ -30,4 +27,21 @@ header {
     }
   }
 }
+
+.footer-container {
+  background-color: $theme1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .footer-inner {
+    h3 {
+      text-align: center;
+      margin: 10px 0;
+    }
+    p {
+      text-align: center;
+      font-size: 0.7em;
+      margin-bottom: 10px;
+    }
+  }
 }

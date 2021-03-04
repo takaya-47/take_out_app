@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   width: 80vw;
+   margin: 0 auto;
+ }
