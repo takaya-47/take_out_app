@@ -11,6 +11,9 @@
 </head>
 
 <body>
+  <header>
+    <%= render partial: "layouts/header" %>
+  </header>
 
   <%# deivseのフラッシュメッセージを表示 %>
   <p class="notice"><%= notice %></p>
@@ -18,6 +21,9 @@
 
   <%= yield %>
 
+  <footer>
+    <%= render partial: "layouts/footer" %>
+  </footer>
 </body>
 
 </html>
