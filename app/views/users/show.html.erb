@@ -61,11 +61,13 @@
   </div>
 </div>
 
+<% if @user.id == current_user.id %>
 <div class="button-area">
   <div class="edit-area">
-    <%= link_to "店舗情報を編集する", "#", class: "button" %>
+    <%= link_to "店舗情報を編集する", edit_user_registration_path, class: "button" %>
   </div>
 </div>
+<% end %>
 
 <h2 class="main-title">提供中のメニュー</h2>
 <div class="hoge">

@@ -91,3 +91,42 @@ body {
     }
   }
 }
+
+// devise/registrations/edit.html.erb
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  table {
+    border-collapse: collapse;
+    th {
+      border: 1px solid gray;
+      padding: 10px;
+      text-align: right;
+      background-color: lightgray;
+    }
+    td {
+      border: 1px solid lightgray;
+      padding: 10px;
+      .form-input {
+        width: 100%;
+        border: 1px solid #f3f3f3;
+      }
+      .form-select {
+        border: 1px dotted #f3f3f3;
+      }
+    }
+  }
+  .button {
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 20px 0;
+    background-color: $theme1;
+    color: $theme3;
+    text-decoration: none;
+    &:hover {
+      background-color: $theme3;
+      color: $theme1;
+    }
+  }
+}
