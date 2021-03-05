@@ -1,0 +1,27 @@
+<h2 class="main-title">登録店舗一覧</h2>
+<div class="users-index">
+  <% @users.each do |user|%>
+  <div class="users">
+    <div class="image-box">
+      <%= link_to image_tag(user.image, class: "image"), user_path(user) %>
+    </div>
+    <div class="info-box">
+      <div class="shop-name">
+        店名：<%= user.shop_name %>
+      </div>
+      <div class="category">
+        カテゴリー：<%= user.category.name %>
+      </div>
+      <div class="full-address">
+        住所：<%= user.prefecture.name %><%= user.address %>
+      </div>
+      <div class="business-hours">
+        営業時間：<%= user.business_hours %>
+      </div>
+      <div class="holiday">
+        定休日：<%= user.holiday %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,7 +1,6 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// 共通する部品に関するレイアウトを記述
 
 $theme1: #edd5be;
 $theme2: #eda65f;
@@ -12,13 +11,22 @@ body {
   margin: 0 auto;
 }
 
-  .header-container {
-    background-color: $theme1;
-    color: $theme3;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 50px;
-    align-items: center;
+// 共通する部品に関するレイアウトを記述
+.header-container {
+  background-color: $theme1;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+  align-items: center;
+  .header-left {
+    .header-logo {
+      display: block;
+      text-decoration: none;
+      font-size: 2.2rem;
+      color: $theme3;
+      font-weight: bold;
+    }
+  }
   .header-right {
     .header-menu {
       display: flex;
@@ -26,7 +34,11 @@ body {
         list-style: none;
         margin: 0 10px;
         .header-link {
+          color: $theme3;
           text-decoration: none;
+          &:hover {
+            font-weight: bold;
+          }
         }
       }
     }
@@ -77,11 +89,10 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 60px 0;
-  .contents-title {
+  .main-title {
     display: inline-block;
     margin-top: 15px;
     text-shadow: $theme1 4px 4px;
-    color: $theme3;
   }
   .contents-bar {
     display: flex;

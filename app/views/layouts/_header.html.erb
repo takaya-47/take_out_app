@@ -1,10 +1,13 @@
 <div class="header-container">
   <div class="header-left">
-    <h1 class="header-logo">Take_Out_App</h1>
+    <%= link_to "Take_Out_App", root_path, class: "header-logo" %>
   </div>
   <div class="header-right">
     <ul class="header-menu">
       <% if user_signed_in? %>
+      <li class="header-list">
+        <%= link_to "登録店舗一覧", users_path, class: "header-link" %>
+      </li>
       <li class="header-list">
         <%= link_to "メニュー投稿", "#", class: "header-link" %>
       </li>
@@ -14,6 +17,9 @@
       <li class="header-list">
         <%= link_to "お問い合わせ", static_pages_contact_path, class: "header-link"%></li>
       <% else %>
+      <li class="header-list">
+        <%= link_to "登録店舗一覧", users_path, class: "header-link" %>
+      </li>
       <li class="header-list">
         <%= link_to "新規登録", new_user_registration_path, class: "header-link"%>
       </li>
