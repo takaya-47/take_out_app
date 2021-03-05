@@ -2,7 +2,6 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   belongs_to :category
-
   has_one_attached :image
 
   # Include default devise modules. Others available are:
