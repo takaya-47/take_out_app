@@ -9,7 +9,7 @@
         <%= link_to "マイページ", user_path(current_user.id), class: "header-link" %>
       </li>
       <li class="header-list">
-        <%= link_to "メニュー投稿", "#", class: "header-link" %>
+        <%= link_to "メニュー投稿", new_menu_path, class: "header-link" %>
       </li>
       <li class="header-list">
         <%= link_to "登録店舗一覧", users_path, class: "header-link" %>
