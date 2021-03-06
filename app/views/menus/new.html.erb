@@ -1,103 +1,34 @@
 <h2 class="main-title">新規メニュー登録</h2>
 
-<%= form_with model: @user, url: user_registration_path, method: :post, class: "form", local: true do |f| %>
+<%= form_with model: @menu, class: "form", local: true do |f| %>
 
-<%= render "devise/shared/error_messages", resource: @user %>
+<%= render partial: "layouts/error_messages.html.erb" %>
 
 <table>
   <tr class="field">
     <th>
-      <%= f.label :shop_name, class: "form-label" %><br />
+      <%= f.label :name, class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :shop_name, autofocus: true, autocomplete: "name", class: "form-input" %>
+      <%= f.text_field :name, autofocus: true, class: "form-input" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
-      <%= f.label :email, class: "form-label" %><br />
+      <%= f.label :price, class: "form-label" %><br />
     </th>
     <td>
-      <%= f.email_field :email, autocomplete: "email", class: "form-input" %>
+      <%= f.text_field :price, class: "form-input", placeholder: "例）1500円の場合は、「1500」と入力" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
-      <%= f.label :password, class: "form-label" %>
+      <%= f.label :explain, class: "form-label" %><br />
     </th>
     <td>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> 文字、半角英数混合)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-input" %>
+      <%= f.text_area :explain, placeholder: "例）地元産の食材にこだわっています...etc", class: "form-input" %>
     </td>
   </tr>
-
-  <tr class="field">
-    <th>
-      <%= f.label :password_confirmation, class: "form-label" %><br />
-    </th>
-    <td>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input" %>
-    </td>
-  </tr>
-
-  <tr class="field">
-    <th>
-      <%= f.label :category_id , class: "form-label"%><br />
-    </th>
-    <td>
-      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form-select"}) %>
-    </td>
-  </tr>
-
-  <tr class="field">
-    <th>
-      <%= f.label :prefecture_id, class: "form-label" %><br />
-    </th>
-    <td>
-      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "form-select"}) %>
-    </td>
-  </tr>
-
-  <tr class="field">
-    <th>
-      <%= f.label :address, class: "form-label" %><br />
-    </th>
-    <td>
-      <%= f.text_field :address, autocomplete: "address-level2", placeholder: "市町村以下の住所を入力", class: "form-input" %>
-    </td>
-  </tr>
-
-  <tr class="field">
-    <th>
-      <%= f.label :business_hours, class: "form-label" %><br />
-    </th>
-    <td>
-      <%= f.text_field :business_hours, placeholder: "例）午前10時〜午後６時", class: "form-input" %>
-    </td>
-  </tr>
-
-  <tr class="field">
-    <th>
-      <%= f.label :holiday, class: "form-label" %><br />
-    </th>
-    <td>
-      <%= f.text_field :holiday, placeholder: "例）毎週水曜", class: "form-input" %>
-    </td>
-  </tr>
-
-  <tr class="field">
-    <th>
-      <%= f.label :phone_number, class: "form-label" %><br />
-    </th>
-    <td>
-      <%= f.text_field :phone_number, placeholder: "ハイフン(-)を入れて入力", class: "form-input" %>
-    </td>
-  </tr>
-
   <tr class="field">
     <th>
       <%= f.label :image, class: "form-label" %><br />
@@ -111,6 +42,5 @@
 <div class="actions">
   <%= f.submit "登録する", class: "button" %>
 </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+<% end %>

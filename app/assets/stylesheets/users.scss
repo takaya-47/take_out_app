@@ -132,6 +132,18 @@ body {
   }
 }
 
+// ログイン画面のリメンバー・ミー
 .field.remember {
   margin-top: 20px;
+}
+
+// エラーメッセージ（Userモデルとその他のモデルのエラーメッセージ）
+.error-explanation {
+  margin-bottom: 15px;
+  ul {
+    li {
+      list-style: none;
+      color: red;
+    }
+  }
 }

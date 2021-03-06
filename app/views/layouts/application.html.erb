@@ -16,9 +16,12 @@
     <%= render partial: "layouts/header" %>
   </header>
 
-  <%# deivseのフラッシュメッセージを表示 %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <%# フラッシュメッセージの表示 %>
+  <% flash.each do |key, value| %>
+  <p class="alert alert-<%= key %>">
+    <%= value %>
+  </p>
+  <% end %>
 
   <%= yield %>
 
