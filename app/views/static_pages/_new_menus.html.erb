@@ -1,0 +1,20 @@
+<div class="contents-box">
+  <%= link_to menu_path(menu), class: "contents-link" do %>
+  <%# メニューの登録が３日以内であればnewマークを表示 %>
+  <% if menu.created_at > 3.days.ago %>
+  <p><i class="fas fa-star faa-flash animated"></i>NEW!!</p>
+  <% end %>
+  <div class="image-box">
+    <%= image_tag menu.image, class: "contents-image" %>
+  </div>
+  <h3 class="contents-title">
+    <%= menu.name %>
+  </h3>
+  <p class="contents-info">
+    <%= menu.price %>円
+  </p>
+  <p class="contents-info">
+    <i class="fas fa-store"></i><%= menu.user.shop_name %>
+  </p>
+  <% end %>
+</div>

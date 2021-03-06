@@ -6,48 +6,14 @@
 <div class="main-contents">
   <h2 class="main-title">新着メニュー</h2>
   <div class="contents-bar">
-    <div class="contents-box">
-      <div class="image-box">
-        <%= image_tag "test.jpeg", class: "contents-image" %>
-      </div>
-      <h3 class="contents-title">料理名</h3>
-      <p class="contents-price">金額</p>
-    </div>
-    <div class="contents-box">
-      <div class="image-box">
-        <%= image_tag "test.jpeg", class: "contents-image" %>
-      </div>
-      <h3 class="contents-title">料理名</h3>
-      <p class="contents-price">金額</p>
-    </div>
-    <div class="contents-box">
-      <div class="image-box">
-        <%= image_tag "test.jpeg", class: "contents-image" %>
-      </div>
-      <h3 class="contents-title">料理名</h3>
-      <p class="contents-price">金額</p>
-    </div>
-    <div class="contents-box">
-      <div class="image-box">
-        <%= image_tag "test.jpeg", class: "contents-image" %>
-      </div>
-      <h3 class="contents-title">料理名</h3>
-      <p class="contents-price">金額</p>
-    </div>
-    <div class="contents-box">
-      <div class="image-box">
-        <%= image_tag "test.jpeg", class: "contents-image" %>
-      </div>
-      <h3 class="contents-title">料理名</h3>
-      <p class="contents-price">金額</p>
-    </div>
+    <%= render partial: "static_pages/new_menus", collection: @menus, as: "menu" %>
   </div>
 </div>
 
 <div class="main-contents">
   <h2 class="main-title">新規登録店舗</h2>
   <div class="contents-bar">
-    <%= render partial: "static_pages/new_users", collection: @users, :as => "user" %>
+    <%= render partial: "static_pages/new_users", collection: @users, as: "user" %>
   </div>
   <%= link_to "お店をもっと見る", users_path, class: "page-link" %>
 </div>
