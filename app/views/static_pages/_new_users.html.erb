@@ -8,4 +8,8 @@
   <p class="contents-price">
     <%= user.category.name %>
   </p>
+  <%# お店の登録が３日以内であればnewマークを表示 %>
+  <% if user.created_at > 3.days.ago %>
+  <p><i class="fas fa-star"></i>NEW!!</p>
+  <% end %>
 </div>
