@@ -20,14 +20,10 @@
     phone_number: "090-1234-5678",
     image: ActiveStorage::Blob.create_and_upload!(io: File.open(Rails.root.join("db/fixtures/sample_user.jpeg")), filename: "sample_user.jpeg")
   )
-end
-
-20.times do |n|
-  menu = Menu.create!(
-    name: "メニュー#{ n + 1 }"
-    price: rand(800..4000)
-    explain: "当店人気ナンバー１です！"
-    user_id: rand(1..23)
+  user.menus.create!(
+    name: "メニュー#{ n + 1 }",
+    price: rand(800..4000),
+    explain: "当店人気ナンバー１です！",
     image: ActiveStorage::Blob.create_and_upload!(io: File.open(Rails.root.join("db/fixtures/sample_menu.jpeg")), filename: "sample_menu.jpeg")
   )
 end
