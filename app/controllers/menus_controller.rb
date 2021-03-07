@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  before_action :find_menu, only: [:show, :edit]
+  before_action :find_menu, only: [:show, :edit, :update]
 
   def new
     @menu = Menu.new
@@ -22,6 +22,12 @@ class MenusController < ApplicationController
   end
 
   def update
+    if @menu.update(menu_params)
+      flash[:success] = 'メニューを変更しました！'
+      redirect_to menu_path(@menu)
+    else
+      render 'edit'
+    end
   end
 
   private

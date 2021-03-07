@@ -78,18 +78,19 @@ body {
   margin-bottom: 60px;
   .edit-area {
     text-align: center;
-    .button {
-      display: inline-block;
-      padding: 20px 40px;
-      background-color: $theme1;
-      color: $theme3;
-      text-decoration: none;
-      box-shadow: 5px 5px 10px $theme2;
-      &:hover {
-        background-color: $theme3;
-        color: $theme1;
-      }
-    }
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: $theme1;
+  color: $theme3;
+  text-decoration: none;
+  box-shadow: 5px 5px 10px $theme2;
+  &:hover {
+    background-color: $theme3;
+    color: $theme1;
   }
 }
 
@@ -100,6 +101,7 @@ body {
   align-items: center;
   table {
     border-collapse: collapse;
+    margin-bottom: 15px;
     th {
       border: 1px solid gray;
       padding: 10px;
@@ -123,7 +125,7 @@ body {
 
 // ログイン画面のリメンバー・ミー
 .field.remember {
-  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 // エラーメッセージ（Userモデルとその他のモデルのエラーメッセージ）
