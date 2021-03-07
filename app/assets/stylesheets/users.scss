@@ -45,7 +45,7 @@ body {
 }
 
 // users/show.html.erb
-.user-show {
+.model-show {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -84,6 +84,7 @@ body {
       background-color: $theme1;
       color: $theme3;
       text-decoration: none;
+      box-shadow: 5px 5px 10px $theme2;
       &:hover {
         background-color: $theme3;
         color: $theme1;
@@ -116,18 +117,6 @@ body {
         width: 50%;
         border: 1px dotted #f3f3f3;
       }
-    }
-  }
-  .button {
-    display: inline-block;
-    padding: 20px 40px;
-    margin: 20px 0;
-    background-color: $theme1;
-    color: $theme3;
-    text-decoration: none;
-    &:hover {
-      background-color: $theme3;
-      color: $theme1;
     }
   }
 }
