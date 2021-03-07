@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  before_action :find_menu, only: [:show, :edit, :update]
+  before_action :find_menu, only: [:show, :edit, :update, :destroy]
 
   def new
     @menu = Menu.new
@@ -28,6 +28,12 @@ class MenusController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @menu.destroy
+    flash[:notice] = "メニューを削除しました"
+    redirect_to user_path(@menu.user)
   end
 
   private
