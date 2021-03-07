@@ -70,6 +70,9 @@
 <% end %>
 
 <h2 class="main-title">提供中のメニュー</h2>
-<div class="hoge">
-  メニューを並びで表示する
+<div class="main-contents">
+  <div class="contents-bar">
+    <%# ここの@menusは、コントローラーでユーザーに紐づいて取得している %>
+    <%= render partial: "user_menus", collection: @menus, as: "menu" %>
+  </div>
 </div>

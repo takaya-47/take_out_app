@@ -1,0 +1,13 @@
+<div class="contents-box">
+  <%= link_to menu_path(menu), class: "contents-link" do %>
+  <div class="image-box">
+    <%= image_tag menu.image, class: "contents-image" %>
+  </div>
+  <h3 class="contents-title">
+    <%= menu.name %>
+  </h3>
+  <p class="contents-info">
+    <%= menu.price %>円
+  </p>
+  <% end %>
+</div>
