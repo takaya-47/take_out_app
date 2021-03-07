@@ -8,7 +8,10 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# font awesomeのCDN読み込み %>
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <%# font awesome animationのCDN読み込み %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
 </head>
 
 <body>
@@ -16,9 +19,12 @@
     <%= render partial: "layouts/header" %>
   </header>
 
-  <%# deivseのフラッシュメッセージを表示 %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <%# フラッシュメッセージの表示 %>
+  <% flash.each do |key, value| %>
+  <p class="alert alert-<%= key %>">
+    <%= value %>
+  </p>
+  <% end %>
 
   <%= yield %>
 

@@ -18,6 +18,12 @@
     business_hours: "9時〜17時",
     holiday: "月曜",
     phone_number: "090-1234-5678",
-    image: ActiveStorage::Blob.create_and_upload!(io: File.open(Rails.root.join("db/fixtures/seed.jpg")), filename: "seed.jpg")
+    image: ActiveStorage::Blob.create_and_upload!(io: File.open(Rails.root.join("db/fixtures/sample_user.jpeg")), filename: "sample_user.jpeg")
+  )
+  user.menus.create!(
+    name: "メニュー#{ n + 1 }",
+    price: rand(800..4000),
+    explain: "当店人気ナンバー１です！",
+    image: ActiveStorage::Blob.create_and_upload!(io: File.open(Rails.root.join("db/fixtures/sample_menu.jpeg")), filename: "sample_menu.jpeg")
   )
 end

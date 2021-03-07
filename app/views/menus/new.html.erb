@@ -1,0 +1,46 @@
+<h2 class="main-title">新規メニュー登録</h2>
+
+<%= form_with model: @menu, class: "form", local: true do |f| %>
+
+<%= render partial: "layouts/error_messages.html.erb" %>
+
+<table>
+  <tr class="field">
+    <th>
+      <%= f.label :name, class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :name, autofocus: true, class: "form-input" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :price, class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :price, class: "form-input", placeholder: "例）1500円の場合は、「1500」と入力" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :explain, class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_area :explain, placeholder: "例）地元産の食材にこだわっています...etc", class: "form-input" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :image, class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.file_field :image %>
+    </td>
+  </tr>
+</table>
+
+<div class="actions">
+  <%= f.submit "登録する", class: "button" %>
+</div>
+
+<% end %>

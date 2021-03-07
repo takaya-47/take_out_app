@@ -92,7 +92,7 @@ body {
   }
 }
 
-// devise/registrations/edit.html.erb
+// devise関係のビューファイル
 .form {
   display: flex;
   flex-direction: column;
@@ -113,6 +113,7 @@ body {
         border: 1px solid #f3f3f3;
       }
       .form-select {
+        width: 50%;
         border: 1px dotted #f3f3f3;
       }
     }
@@ -127,6 +128,22 @@ body {
     &:hover {
       background-color: $theme3;
       color: $theme1;
+    }
+  }
+}
+
+// ログイン画面のリメンバー・ミー
+.field.remember {
+  margin-top: 20px;
+}
+
+// エラーメッセージ（Userモデルとその他のモデルのエラーメッセージ）
+.error-explanation {
+  margin-bottom: 15px;
+  ul {
+    li {
+      list-style: none;
+      color: red;
     }
   }
 }

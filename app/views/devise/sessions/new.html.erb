@@ -1,26 +1,36 @@
-<h2>ログイン</h2>
+<h2 class="main-title">ログイン</h2>
 
-<%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
+<%= form_with model: @user, url: new_user_session_path, class: "form", local: true do |f| %>
 
-<div class="field">
-  <%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-</div>
+<table>
+  <tr class="field">
+    <th>
+      <%= f.label :email, class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
+    </td>
+  </tr>
 
-<div class="field">
-  <%= f.label :password %><br />
-  <%= f.password_field :password, autocomplete: "current-password" %>
-</div>
+  <tr class="field">
+    <th>
+      <%= f.label :password, class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-input" %>
+    </td>
+  </tr>
+</table>
 
 <% if devise_mapping.rememberable? %>
-<div class="field">
+<div class="field remember">
   <%= f.check_box :remember_me %>
   <%= f.label :remember_me %>
 </div>
 <% end %>
 
 <div class="actions">
-  <%= f.submit "ログインする" %>
+  <%= f.submit "ログインする", class: "button" %>
 </div>
 <% end %>
 
