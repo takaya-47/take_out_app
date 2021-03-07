@@ -1,4 +1,6 @@
 class MenusController < ApplicationController
+  before_action :find_menu, only: [:show, :edit, :update, :destroy]
+
   def new
     @menu = Menu.new
   end
@@ -13,9 +15,34 @@ class MenusController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @menu.update(menu_params)
+      flash[:success] = 'メニューを変更しました！'
+      redirect_to menu_path(@menu)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @menu.destroy
+    flash[:notice] = 'メニューを削除しました'
+    redirect_to user_path(@menu.user)
+  end
+
   private
 
   def menu_params
     params.require(:menu).permit(:name, :price, :explain, :image).merge(user_id: current_user.id)
+  end
+
+  def find_menu
+    @menu = Menu.find(params[:id])
   end
 end

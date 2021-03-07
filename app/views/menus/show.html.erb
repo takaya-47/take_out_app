@@ -1,0 +1,65 @@
+<h2 class="main-title">メニュー詳細</h2>
+<div class="model-show">
+  <div class="main-image">
+    <%= image_tag @menu.image, class: "pic" %>
+  </div>
+  <div class="main-info">
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-store fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>店舗名</h4>
+        <p><%= link_to @menu.user.shop_name, user_path(@menu.user) %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-utensils fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>メニュー名</h4>
+        <p><%= @menu.name %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-tags fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>値段</h4>
+        <p><%= @menu.price %>円</p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-book-open fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>メニューの説明</h4>
+        <p><%= @menu.explain %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @menu.user.id == current_user.id %>
+<div class="buttons-area">
+  <div class="button-area left">
+    <div class="edit-area">
+      <%= link_to "メニュー詳細を変更する", edit_menu_path(@menu), class: "button" %>
+    </div>
+  </div>
+  <div class="button-area">
+    <div class="edit-area">
+      <%= link_to "このメニューを削除する", menu_path(@menu), method: :delete, class: "button" %>
+    </div>
+  </div>
+</div>
+<% else %>
+<div class="button-area">
+  <div class="edit-area">
+    <%= link_to "注文する", '#', class: "button" %>
+  </div>
+</div>
+<% end %>

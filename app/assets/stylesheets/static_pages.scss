@@ -5,6 +5,9 @@
 $theme1: #edd5be;
 $theme2: #eda65f;
 $theme3: #ed7700;
+$sub1: #00a3af;
+$sub2: #1e50a2;
+$sub3: #0f2350;
 
 body {
   width: 80vw;
@@ -139,7 +142,7 @@ body {
       }
     }
   }
-  .page-link {
+  .button {
     display: block;
     text-decoration: none;
     padding: 10px;
