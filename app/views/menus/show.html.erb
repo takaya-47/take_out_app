@@ -10,7 +10,7 @@
       </div>
       <div class="info">
         <h4>店舗名</h4>
-        <p><%= @menu.user.shop_name %></p>
+        <p><%= link_to @menu.user.shop_name, user_path(@menu.user) %></p>
       </div>
     </div>
     <div class="info-box">
