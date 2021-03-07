@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :menu do
-    name { "オムライス" }
+    name { 'オムライス' }
     price { 1000 }
-    explain { "懐かしのオムライスです" }
+    explain { '懐かしのオムライスです' }
     association :user
 
     after(:build) do |menu|

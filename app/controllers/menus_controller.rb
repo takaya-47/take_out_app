@@ -6,7 +6,7 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     if @menu.save
-      flash[:success] = "メニューを投稿しました！"
+      flash[:success] = 'メニューを投稿しました！'
       redirect_to root_path
     else
       render 'new'
@@ -14,7 +14,8 @@ class MenusController < ApplicationController
   end
 
   private
-    def menu_params
-      params.require(:menu).permit(:name, :price, :explain, :image).merge(user_id: current_user.id)
-    end
+
+  def menu_params
+    params.require(:menu).permit(:name, :price, :explain, :image).merge(user_id: current_user.id)
+  end
 end

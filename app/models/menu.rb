@@ -7,5 +7,5 @@ class Menu < ApplicationRecord
     validates :explain
     validates :image
   end
-  validates :price, numericality: { greater_than: 0, less_than: 1000000 }
+  validates :price, numericality: { greater_than: 0, less_than: 1_000_000 }
 end
