@@ -5,10 +5,15 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     @orderOrderDetail = OrderOrderDetail.new(order_params)
     # フォームオブジェクトクラスではvalid?メソッドを実行できないので、こちらで検証する
     if @orderOrderDetail.valid?
+      Payjp.api_key = "sk_test_434bc308205ab4662218b143"
+      Payjp::Charge.create(
+        :amount => order_params[:total_price],
+        :card => order_params[:token],
+        :currency => 'jpy'
+      )
       @orderOrderDetail.save
       flash[:success] = "ご注文ありがとうございます!"
       redirect_to root_path
