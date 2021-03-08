@@ -30,7 +30,8 @@
       </div>
       <div class="info">
         <h4>値段</h4>
-        <p><%= @menu.price %>円</p>
+        <p id="menu-price"><%= @menu.price %></p>
+        <span class="jpy">円</span>
       </div>
     </div>
     <div class="info-box">
@@ -89,15 +90,15 @@
       <%= f.label :quantity, "数量", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :quantity, class: "form-input" %>
+      <%= f.text_field :quantity, class: "form-input", id: "quantity" %>
     </td>
   </tr>
   <tr class="field">
     <th>
-      <%= f.label :total_price, "合計金額（自動計算）", class: "form-label" %><br />
+      <%= f.label :total_price, "合計金額（税込）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :total_price, class: "form-input" %>
+      <%= f.text_field :total_price, class: "form-input", id: "total-price", placeholder: "自動入力" %>
     </td>
   </tr>
   <tr class="field">
