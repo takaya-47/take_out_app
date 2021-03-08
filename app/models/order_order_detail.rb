@@ -12,6 +12,7 @@ class OrderOrderDetail
     validates :address
     validates :phone_number, format: { with: /\A0[1-9]\d{0,3}[-(]\d{1,4}[-)]\d{4}\z/ }
     validates :menu_id
+    validates :token
   end
   # そもそもリストから選ぶ形式なので0以外についてのみ制約を設ける
   with_options numericality: { other_than: 0 } do
