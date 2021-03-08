@@ -52,8 +52,6 @@
 <%= render "layouts/error_messages.html.erb", model: f.object %>
 
 <table>
-  <%
-=begin%>
   <tr class="field">
     <th>
       <%= f.label :number, "カード番号", class: "form-label" %><br />
@@ -86,8 +84,6 @@
       <%= f.text_field :exp_year, class: "form-input", placeholder: "例）25" %>
     </td>
   </tr>
-  <%
-=end%>
   <tr class="field">
     <th>
       <%= f.label :quantity, "数量", class: "form-label" %><br />
