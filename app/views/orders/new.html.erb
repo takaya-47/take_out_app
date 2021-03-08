@@ -57,7 +57,7 @@
       <%= f.label :number, "カード番号", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :number, autofocus: true, class: "form-input" %>
+      <%= f.text_field :number, autofocus: true, class: "form-input", placeholder: "半角で入力" %>
     </td>
   </tr>
   <tr class="field">
@@ -65,7 +65,7 @@
       <%= f.label :cvc, "CVC", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :cvc, class: "form-input" %>
+      <%= f.text_field :cvc, class: "form-input", placeholder: "カード背面4桁もしくは3桁の番号" %>
     </td>
   </tr>
   <tr class="field">
@@ -73,7 +73,7 @@
       <%= f.label :exp_month, "有効期限（月）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :exp_month, class: "form-input", placeholder: "例）3" %>
+      <%= f.text_field :exp_month, class: "form-input", placeholder: "例)3" %>
     </td>
   </tr>
   <tr class="field">
@@ -81,7 +81,7 @@
       <%= f.label :exp_year, "有効期限（年）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :exp_year, class: "form-input", placeholder: "例）25" %>
+      <%= f.text_field :exp_year, class: "form-input", placeholder: "例)25" %>
     </td>
   </tr>
   <tr class="field">
