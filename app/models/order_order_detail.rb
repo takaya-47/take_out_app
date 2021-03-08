@@ -3,7 +3,7 @@ class OrderOrderDetail
   include ActiveModel::Model
 
   # このクラスで扱う属性を全て定義
-  attr_accessor :quantity, :total_price, :last_name, :first_name, :last_name_kana, :first_name_kana, :prefecture_id, :address, :phone_number, :visit_day_id, :visit_time_id, :menu_id
+  attr_accessor :quantity, :total_price, :last_name, :first_name, :last_name_kana, :first_name_kana, :prefecture_id, :address, :phone_number, :visit_day_id, :visit_time_id, :menu_id, :token
 
   # バリデーションを記述
   with_options presence:true do

@@ -47,7 +47,7 @@
 
 <%# 注文情報入力フォーム %>
 <%# フォームオブジェクトクラスのインスタンスを渡し、URLも指定する必要がある %>
-<%= form_with model: @orderOrderDetail, url: menu_orders_path(params[:menu_id].to_i), method: :post, class: "form", local: true do |f| %>
+<%= form_with model: @orderOrderDetail, url: menu_orders_path(params[:menu_id].to_i), method: :post, class: "form", id: "order-form", local: true do |f| %>
 
 <%= render "layouts/error_messages.html.erb", model: f.object %>
 

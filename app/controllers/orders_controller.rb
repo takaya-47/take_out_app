@@ -20,6 +20,6 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order_order_detail).permit(:quantity, :total_price, :last_name, :first_name, :last_name_kana, :first_name_kana, :prefecture_id, :address, :phone_number, :visit_day_id, :visit_time_id).merge(menu_id: params[:menu_id].to_i)
+      params.require(:order_order_detail).permit(:quantity, :total_price, :last_name, :first_name, :last_name_kana, :first_name_kana, :prefecture_id, :address, :phone_number, :visit_day_id, :visit_time_id).merge(menu_id: params[:menu_id].to_i, token: params[:token])
     end
 end
