@@ -17,5 +17,5 @@ class VisitTime < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :orderdetail
+  has_many :order_details
 end

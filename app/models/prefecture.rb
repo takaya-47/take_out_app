@@ -20,4 +20,5 @@ class Prefecture < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :users
+  has_many :order_details
 end
