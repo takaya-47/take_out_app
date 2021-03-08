@@ -1,6 +1,6 @@
 const payjp = () => {
   // テスト用パブリックキーを取得
-  Payjp.setPublicKey("pk_test_e6ba193b9af5d556894a2f6f");
+  Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
   // 対象となる入力フォームを取得
   const orderForm = document.getElementById("order-form");
 
