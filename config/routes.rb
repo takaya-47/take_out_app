@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :menus do
     resources :orders, only: [:new, :create]
   end
+
+  post 'https://notify-api.line.me/api/notify', to: "orders#send"
 end
