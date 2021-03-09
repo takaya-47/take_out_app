@@ -1,11 +1,11 @@
 <%= form_with model: @menu, class: "form", local: true do |f| %>
 
-<%= render partial: "layouts/error_messages.html.erb" %>
+<%= render "layouts/error_messages.html.erb", model: f.object %>
 
 <table>
   <tr class="field">
     <th>
-      <%= f.label :name, class: "form-label" %><br />
+      <%= f.label :name, "メニュー名", class: "form-label" %><br />
     </th>
     <td>
       <%= f.text_field :name, autofocus: true, class: "form-input" %>
@@ -13,7 +13,7 @@
   </tr>
   <tr class="field">
     <th>
-      <%= f.label :price, class: "form-label" %><br />
+      <%= f.label :price, "金額", class: "form-label" %><br />
     </th>
     <td>
       <%= f.text_field :price, class: "form-input", placeholder: "例）1500円の場合は、「1500」と入力" %>
@@ -21,7 +21,7 @@
   </tr>
   <tr class="field">
     <th>
-      <%= f.label :explain, class: "form-label" %><br />
+      <%= f.label :explain, "メニューの説明", class: "form-label" %><br />
     </th>
     <td>
       <%= f.text_area :explain, placeholder: "例）地元産の食材にこだわっています...etc", class: "form-input" %>
@@ -29,7 +29,7 @@
   </tr>
   <tr class="field">
     <th>
-      <%= f.label :image, class: "form-label" %><br />
+      <%= f.label :image, "料理写真", class: "form-label" %><br />
     </th>
     <td>
       <%= f.file_field :image %>

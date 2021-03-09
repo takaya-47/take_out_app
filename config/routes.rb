@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show, :index]
 
-  resources :menus
+  resources :menus do
+    resources :orders, only: [:new, :create]
+  end
 end

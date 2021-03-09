@@ -1,0 +1,182 @@
+<h2 class="main-title">注文画面</h2>
+
+<%# ページ上部のメニュー表示部分 %>
+<div class="model-show">
+  <div class="main-image">
+    <%= image_tag @menu.image, class: "pic" %>
+  </div>
+  <div class="main-info">
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-store fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>店舗名</h4>
+        <p><%= @menu.user.shop_name %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-utensils fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>メニュー名</h4>
+        <p><%= @menu.name %></p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-tags fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>値段</h4>
+        <p id="menu-price"><%= @menu.price %></p>
+        <span class="jpy">円</span>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">
+        <i class="fas fa-book-open fa-lg"></i>
+      </div>
+      <div class="info">
+        <h4>メニューの説明</h4>
+        <p><%= @menu.explain %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# 注文情報入力フォーム %>
+<%# フォームオブジェクトクラスのインスタンスを渡し、URLも指定する必要がある %>
+<%= form_with model: @orderOrderDetail, url: menu_orders_path(params[:menu_id].to_i), method: :post, class: "form", id: "order-form", local: true do |f| %>
+
+<%= render "layouts/error_messages.html.erb", model: f.object %>
+
+<table>
+  <tr class="field">
+    <th>
+      <%= f.label :number, "カード番号", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :number, autofocus: true, class: "form-input", placeholder: "半角で入力" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :cvc, "CVC", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :cvc, class: "form-input", placeholder: "カード背面4桁もしくは3桁の番号" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :exp_month, "有効期限（月）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :exp_month, class: "form-input", placeholder: "例)3" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :exp_year, "有効期限（年）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :exp_year, class: "form-input", placeholder: "例)25" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :quantity, "数量", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :quantity, class: "form-input", id: "quantity" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :total_price, "合計金額（税込）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :total_price, class: "form-input", id: "total-price", placeholder: "自動入力" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :last_name, "名前（姓）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :last_name, class: "form-input" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :first_name, "名前（名）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :first_name, class: "form-input" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :last_name_kana, "フリガナ（姓）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :last_name_kana, class: "form-input" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :first_name_kana, "フリガナ（名）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :first_name_kana, class: "form-input" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :prefecture_id, "住所（都道府県）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "form-select"}) %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :address, "住所（市町村以下）", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :address, class: "form-input" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :phone_number, "電話番号", placeholder: "ハイフン(-)を入れて入力", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.text_field :phone_number, class: "form-input" %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :visit_day_id, "来店日", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.collection_select(:visit_day_id, VisitDay.all, :id, :name, {}, {class: "form-select"}) %>
+    </td>
+  </tr>
+  <tr class="field">
+    <th>
+      <%= f.label :visit_time_id, "来店時間", class: "form-label" %><br />
+    </th>
+    <td>
+      <%= f.collection_select(:visit_time_id, VisitTime.all, :id, :name, {}, {class: "form-select"}) %>
+    </td>
+  </tr>
+</table>
+
+<div class="actions">
+  <%= f.submit "注文する", class: "button menu" %>
+</div>
+
+<% end %>

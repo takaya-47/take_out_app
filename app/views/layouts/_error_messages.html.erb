@@ -1,8 +1,8 @@
 <%# deviseに紐付かないモデルのエラーメッセージ %>
-<% if @menu.errors.any? %>
+<% if model.errors.any? %>
 <div class="error-explanation">
   <ul>
-    <% @menu.errors.full_messages.each do |message| %>
+    <% model.errors.full_messages.each do |message| %>
     <li><%= message %></li>
     <% end %>
   </ul>
