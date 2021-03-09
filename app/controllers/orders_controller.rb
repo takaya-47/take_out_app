@@ -8,7 +8,11 @@ class OrdersController < ApplicationController
     @orderOrderDetail = OrderOrderDetail.new(order_params)
     # フォームオブジェクトクラスではvalid?メソッドを実行できないので、こちらで検証する
     if @orderOrderDetail.valid?
+      # Payjp側にカード情報を送信して決済を完了させる
       pay_menu
+      # メニューの投稿ユーザーに注文メールを送る
+      
+      # フォームオブジェクトクラスで定義済みのsaveメソッドを実行
       @orderOrderDetail.save
       flash[:success] = 'ご注文ありがとうございます!'
       redirect_to root_path
