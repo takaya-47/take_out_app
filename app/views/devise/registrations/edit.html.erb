@@ -7,10 +7,10 @@
 <table>
   <tr class="field">
     <th>
-      <%= f.label :shop_name, class: "form-label" %><br />
+      <%= f.label :shop_name, "店舗名", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :shop_name, "店舗名", autofocus: true, class: "form-input", autocomplete: "name" %>
+      <%= f.text_field :shop_name, autofocus: true, class: "form-input", autocomplete: "name" %>
     </td>
   </tr>
   <tr class="field">
@@ -79,7 +79,7 @@
   </tr>
   <tr class="field">
     <th>
-      <%= f.label :password, "パスワード（新）" class: "form-label" %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :password, "パスワード（新）", class: "form-label" %> <i>(leave blank if you don't want to change it)</i><br />
     </th>
     <td>
       <%= f.password_field :password, class: "form-input", autocomplete: "new-password" %>
@@ -104,7 +104,7 @@
 </table>
 
 <div class="actions">
-  <%= f.submit "更新する", class: "button" %>
+  <%= f.submit "更新する", class: "button edit" %>
 </div>
 
 <% end %>
