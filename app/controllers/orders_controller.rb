@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @orderOrderDetail = OrderOrderDetail.new
     @menu = Menu.find(params[:menu_id])
