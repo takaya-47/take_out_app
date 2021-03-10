@@ -1,5 +1,4 @@
 class OrderMailer < ApplicationMailer
-
   def send_when_order(orderOrderDetail)
     @orderOrderDetail = orderOrderDetail
 
@@ -14,5 +13,4 @@ class OrderMailer < ApplicationMailer
 
     mail(to: @user.email, subject: '注文のお知らせ')
   end
-
 end
