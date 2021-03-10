@@ -1,0 +1,62 @@
+<h1>注文のお知らせ</h1>
+<h2><%= @user.shop_name %> 様、以下のとおり注文がありました！</h2>
+<h2>お料理のご準備をお願いします！</h2>
+<h3>【注文内容】</h3>
+<table>
+  <tr>
+    <th>
+      <p>メニュー名</p>
+    </th>
+    <td>
+      <p><%= @menu.name %></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <p>注文数</p>
+    </th>
+    <td>
+      <p><%= @orderOrderDetail.quantity %></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <p>合計金額（税込）</p>
+    </th>
+    <td>
+      <p><%= @orderOrderDetail.total_price %>円</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <p>ご注文者様氏名</p>
+    </th>
+    <td>
+      <p><%= @orderOrderDetail.last_name %><%= @orderOrderDetail.first_name %></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <p>ご注文者様氏名（フリガナ）</p>
+    </th>
+    <td>
+      <p><%= @orderOrderDetail.last_name_kana %><%= @orderOrderDetail.first_name_kana %></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <p>連絡先</p>
+    </th>
+    <td>
+      <p><%= @orderOrderDetail.phone_number %></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <p>来店時間</p>
+    </th>
+    <td>
+      <p><%= @visit_day %>の<%= @visit_time %></p>
+    </td>
+  </tr>
+</table>

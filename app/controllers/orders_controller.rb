@@ -10,10 +10,10 @@ class OrdersController < ApplicationController
     if @orderOrderDetail.valid?
       # Payjp側にカード情報を送信して決済を完了させる
       pay_menu
-      # メニューの投稿ユーザーに注文メールを送る
-      
       # フォームオブジェクトクラスで定義済みのsaveメソッドを実行
       @orderOrderDetail.save
+      # メニューの投稿ユーザーに注文メールを送る
+      OrderMailer.send_when_order(@orderOrderDetail).deliver_now
       flash[:success] = 'ご注文ありがとうございます!'
       redirect_to root_path
     else
