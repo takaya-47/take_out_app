@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   before_action :find_menu, only: [:show, :edit, :update, :destroy]
 
   def new

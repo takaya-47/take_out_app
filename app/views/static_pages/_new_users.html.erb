@@ -1,9 +1,5 @@
 <div class="contents-box">
   <%= link_to user_path(user), class: "contents-link" do %>
-  <%# お店の登録が３日以内であればnewマークを表示 %>
-  <% if user.created_at > 3.days.ago %>
-  <p><i class="fas fa-star faa-flash animated"></i>NEW!!</p>
-  <% end %>
   <div class="image-box">
     <%= image_tag user.image, class: "contents-image" %>
   </div>

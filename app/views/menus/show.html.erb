@@ -43,7 +43,13 @@
   </div>
 </div>
 
-<% if @menu.user.id == current_user.id %>
+<% if (current_user == nil) || current_user.id != @menu.user.id %>
+<div class="button-area">
+  <div class="edit-area">
+    <%= link_to "注文する", new_menu_order_path(@menu), class: "button" %>
+  </div>
+</div>
+<% else %>
 <div class="buttons-area">
   <div class="button-area left">
     <div class="edit-area">
@@ -54,12 +60,6 @@
     <div class="edit-area">
       <%= link_to "このメニューを削除する", menu_path(@menu), method: :delete, class: "button" %>
     </div>
-  </div>
-</div>
-<% else %>
-<div class="button-area">
-  <div class="edit-area">
-    <%= link_to "注文する", new_menu_order_path(@menu), class: "button" %>
   </div>
 </div>
 <% end %>

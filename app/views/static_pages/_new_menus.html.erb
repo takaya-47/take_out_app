@@ -1,9 +1,5 @@
 <div class="contents-box">
   <%= link_to menu_path(menu), class: "contents-link" do %>
-  <%# メニューの登録が３日以内であればnewマークを表示 %>
-  <% if menu.created_at > 3.days.ago %>
-  <p><i class="fas fa-star faa-flash animated"></i>NEW!!</p>
-  <% end %>
   <div class="image-box">
     <%= image_tag menu.image, class: "contents-image" %>
   </div>
