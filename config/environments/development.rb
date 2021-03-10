@@ -37,6 +37,9 @@ Rails.application.configure do
   # deviseをインストールしたときの指示にあったので転記(パスワードリセットメール送信のときのホストを指定する)
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # 注文お知らせメールに画像を添付するための設定(メールビューではimage_tagヘルパーメソッドを使う)
+  # config.action_mailer.asset_host = 'http://localhost:3000/'
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

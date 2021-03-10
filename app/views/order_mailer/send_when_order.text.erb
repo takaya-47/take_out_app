@@ -1,0 +1,12 @@
+◆注文のお知らせ◆
+<%= @user.shop_name %> 様、以下のとおり注文がありました！
+お料理のご準備をお願いします！
+
+【注文内容】
+メニュー名： <%= @menu.name %>
+注文数： <%= @orderOrderDetail.quantity %>
+合計金額（税込）： <%= @orderOrderDetail.total_price %>円
+ご注文者様氏名： <%= @orderOrderDetail.last_name %><%= @orderOrderDetail.first_name %>
+ご注文者様氏名（フリガナ）： <%= @orderOrderDetail.last_name_kana %><%= @orderOrderDetail.first_name_kana %>
+連絡先： <%= @orderOrderDetail.phone_number %>
+来店時間： <%= @visit_day %>の<%= @visit_time %>

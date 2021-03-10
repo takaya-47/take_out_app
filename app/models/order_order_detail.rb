@@ -36,7 +36,7 @@ class OrderOrderDetail
   def save
     order = Order.create(menu_id: menu_id)
     # 先に保存したorderインスタンスのidを使っている！
-    OrderDetail.create!(quantity: quantity, total_price: total_price, last_name: last_name, first_name: first_name,
-                        last_name_kana: last_name_kana, first_name_kana: first_name_kana, prefecture_id: prefecture_id, address: address, phone_number: phone_number, visit_day_id: visit_day_id, visit_time_id: visit_time_id, order_id: order.id)
+    order_detail = OrderDetail.create!(quantity: quantity, total_price: total_price, last_name: last_name, first_name: first_name,
+                                       last_name_kana: last_name_kana, first_name_kana: first_name_kana, prefecture_id: prefecture_id, address: address, phone_number: phone_number, visit_day_id: visit_day_id, visit_time_id: visit_time_id, order_id: order.id)
   end
 end
