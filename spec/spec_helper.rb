@@ -13,7 +13,14 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+# capybaraを使用するための記述を追記（公式GitHubより）
+require 'capybara/rspec'
+
 RSpec.configure do |config|
+  # capybaraを使用するための記述を追記（公式GitHubより）
+  config.include Capybara::DSL
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
