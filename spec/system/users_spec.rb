@@ -154,7 +154,7 @@ RSpec.describe 'edit, updateアクション', type: :system do
     fill_in 'パスワード（確認）', with: @user.password_confirmation
     fill_in '現在のパスワード', with: @user.password
     click_on '更新する'
-    expect(page).to have_content('Your account has been updated successfully.')
+    expect(page).to have_content('アカウント情報を変更しました。')
     expect(current_path).to eq root_path
   end
 end

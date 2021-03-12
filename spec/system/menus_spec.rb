@@ -13,7 +13,7 @@ RSpec.describe 'メニュー新規投稿', type: :system do
     visit new_menu_path
     expect(page).to have_content('新規メニュー登録')
     fill_in 'メニュー名', with: @menu.name
-    fill_in '金額', with: @menu.price
+    fill_in '価格（税込）', with: @menu.price
     fill_in 'メニューの説明', with: @menu.explain
     attach_file '料理写真', "#{Rails.root}/app/assets/images/test.jpeg"
     expect do
@@ -38,7 +38,7 @@ RSpec.describe 'メニュー編集・削除', type: :system do
     visit menu_path(@menu)
     click_on 'メニュー詳細を変更する'
     fill_in 'メニュー名', with: @menu.name
-    fill_in '金額', with: @menu.price
+    fill_in '価格（税込）', with: @menu.price
     fill_in 'メニューの説明', with: @menu.explain
     attach_file '料理写真', "#{Rails.root}/app/assets/images/test.jpeg"
     click_on '登録する'

@@ -9,16 +9,18 @@ ja:
         business_hours: 営業時間
         holiday: 定休日
         phone_number: 電話番号
+        image: 店舗写真
       menu:
         name: メニュー名
         price: 価格
         explain: メニュー説明
+        image: メニュー写真
 
   # フォームオブジェクトを用いている場合はこちらで記載する
   activemodel:
     attributes:
       order_order_detail:
-        quantity: 数量
+        quantity: 個数
         total_price: 合計金額
         last_name: 名前（姓）
         first_name: 名前（名）
@@ -29,4 +31,5 @@ ja:
         phone_number: 電話番号
         visit_day_id: 来店日
         visit_time_id: 来店時間
-        token: カード情報
+        token: クレジットカード情報
+        menu_id: メニュー

@@ -16,55 +16,55 @@ RSpec.describe Menu, type: :model do
       it 'nameがなければ投稿できない' do
         @menu.name = nil
         @menu.valid?
-        expect(@menu.errors.full_messages).to include("Name can't be blank")
+        expect(@menu.errors.full_messages).to include("メニュー名を入力してください")
       end
 
       it 'explainがなければ投稿できない' do
         @menu.explain = nil
         @menu.valid?
-        expect(@menu.errors.full_messages).to include("Explain can't be blank")
+        expect(@menu.errors.full_messages).to include("メニュー説明を入力してください")
       end
 
       it 'imageがなければ投稿できない' do
         @menu.image = nil
         @menu.valid?
-        expect(@menu.errors.full_messages).to include("Image can't be blank")
+        expect(@menu.errors.full_messages).to include("メニュー写真を入力してください")
       end
 
       it 'priceがなければ投稿できない' do
         @menu.price = nil
         @menu.valid?
-        expect(@menu.errors.full_messages).to include('Price is not a number')
+        expect(@menu.errors.full_messages).to include('価格は数値で入力してください')
       end
 
       it 'priceが0だと投稿できない' do
         @menu.price = 0
         @menu.valid?
-        expect(@menu.errors.full_messages).to include('Price must be greater than 0')
+        expect(@menu.errors.full_messages).to include('価格は0より大きい値にしてください')
       end
 
       it 'priceがマイナスの値だと投稿できない' do
         @menu.price = -1000
         @menu.valid?
-        expect(@menu.errors.full_messages).to include('Price must be greater than 0')
+        expect(@menu.errors.full_messages).to include('価格は0より大きい値にしてください')
       end
 
       it 'priceが1000000以上だと投稿できない' do
         @menu.price = 1_000_000
         @menu.valid?
-        expect(@menu.errors.full_messages).to include('Price must be less than 1000000')
+        expect(@menu.errors.full_messages).to include('価格は1000000より小さい値にしてください')
       end
 
       it 'priceが全角で入力されていると投稿できない' do
         @menu.price = '１０００'
         @menu.valid?
-        expect(@menu.errors.full_messages).to include('Price is not a number')
+        expect(@menu.errors.full_messages).to include('価格は数値で入力してください')
       end
 
       it 'priceに半角英字が含まれていると投稿できない' do
         @menu.price = '100o'
         @menu.valid?
-        expect(@menu.errors.full_messages).to include('Price is not a number')
+        expect(@menu.errors.full_messages).to include('価格は数値で入力してください')
       end
     end
   end
