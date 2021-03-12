@@ -16,19 +16,19 @@ RSpec.describe Menu, type: :model do
       it 'nameがなければ投稿できない' do
         @menu.name = nil
         @menu.valid?
-        expect(@menu.errors.full_messages).to include("メニュー名を入力してください")
+        expect(@menu.errors.full_messages).to include('メニュー名を入力してください')
       end
 
       it 'explainがなければ投稿できない' do
         @menu.explain = nil
         @menu.valid?
-        expect(@menu.errors.full_messages).to include("メニュー説明を入力してください")
+        expect(@menu.errors.full_messages).to include('メニュー説明を入力してください')
       end
 
       it 'imageがなければ投稿できない' do
         @menu.image = nil
         @menu.valid?
-        expect(@menu.errors.full_messages).to include("メニュー写真を入力してください")
+        expect(@menu.errors.full_messages).to include('メニュー写真を入力してください')
       end
 
       it 'priceがなければ投稿できない' do

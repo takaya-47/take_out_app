@@ -24,7 +24,7 @@ RSpec.describe OrderOrderDetail, type: :model do
       it 'quantityがないと注文できない' do
         @orderOrderDetail.quantity = nil
         @orderOrderDetail.valid?
-        expect(@orderOrderDetail.errors.full_messages).to include("個数を入力してください")
+        expect(@orderOrderDetail.errors.full_messages).to include('個数を入力してください')
       end
 
       it 'quantityが0では注文できない' do
@@ -42,19 +42,19 @@ RSpec.describe OrderOrderDetail, type: :model do
       it 'total_priceがないと注文できない' do
         @orderOrderDetail.total_price = nil
         @orderOrderDetail.valid?
-        expect(@orderOrderDetail.errors.full_messages).to include("合計金額を入力してください")
+        expect(@orderOrderDetail.errors.full_messages).to include('合計金額を入力してください')
       end
 
       it 'addressがないと注文できない' do
         @orderOrderDetail.address = nil
         @orderOrderDetail.valid?
-        expect(@orderOrderDetail.errors.full_messages).to include("市町村以下住所を入力してください")
+        expect(@orderOrderDetail.errors.full_messages).to include('市町村以下住所を入力してください')
       end
 
       it 'phone_numberがないと注文できない' do
         @orderOrderDetail.phone_number = nil
         @orderOrderDetail.valid?
-        expect(@orderOrderDetail.errors.full_messages).to include("電話番号を入力してください")
+        expect(@orderOrderDetail.errors.full_messages).to include('電話番号を入力してください')
       end
 
       it 'phone_numberはハイフンが必要' do
@@ -72,13 +72,13 @@ RSpec.describe OrderOrderDetail, type: :model do
       it 'menuがなければ注文できない' do
         @orderOrderDetail.menu_id = nil
         @orderOrderDetail.valid?
-        expect(@orderOrderDetail.errors.full_messages).to include("メニューを入力してください")
+        expect(@orderOrderDetail.errors.full_messages).to include('メニューを入力してください')
       end
 
       it 'tokenがなければ注文できない' do
         @orderOrderDetail.token = nil
         @orderOrderDetail.valid?
-        expect(@orderOrderDetail.errors.full_messages).to include("クレジットカード情報を入力してください")
+        expect(@orderOrderDetail.errors.full_messages).to include('クレジットカード情報を入力してください')
       end
 
       it 'prefecture_idがなければ注文できない' do

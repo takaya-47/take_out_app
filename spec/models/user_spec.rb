@@ -41,37 +41,37 @@ RSpec.describe User, type: :model do
         @user.password = 'Pass1234'
         @user.password_confirmation = 'Pass5678'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
 
       it '店名がないと登録できない' do
         @user.shop_name = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("店名を入力してください")
+        expect(@user.errors.full_messages).to include('店名を入力してください')
       end
 
       it '住所がないと登録できない' do
         @user.address = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("住所を入力してください")
+        expect(@user.errors.full_messages).to include('住所を入力してください')
       end
 
       it '営業時間がないと登録できない' do
         @user.business_hours = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("営業時間を入力してください")
+        expect(@user.errors.full_messages).to include('営業時間を入力してください')
       end
 
       it '定休日がないと登録できない' do
         @user.holiday = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("定休日を入力してください")
+        expect(@user.errors.full_messages).to include('定休日を入力してください')
       end
 
       it '電話番号がないと登録できない' do
         @user.phone_number = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("電話番号を入力してください")
+        expect(@user.errors.full_messages).to include('電話番号を入力してください')
       end
 
       it '電話番号はハイフンが必要' do
@@ -107,7 +107,7 @@ RSpec.describe User, type: :model do
       it '画像がなければ登録できない' do
         @user.image = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("店舗写真を入力してください")
+        expect(@user.errors.full_messages).to include('店舗写真を入力してください')
       end
     end
   end
