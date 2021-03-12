@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        shop_name: 店名
+        category_id: カテゴリー
+        prefecture_id: 都道府県
+        address: 住所
+        business_hours: 営業時間
+        holiday: 定休日
+        phone_number: 電話番号
+      menu:
+        name: メニュー名
+        price: 価格
+        explain: メニュー説明
+
+  # フォームオブジェクトを用いている場合はこちらで記載する
+  activemodel:
+    attributes:
+      order_order_detail:
+        quantity: 数量
+        total_price: 合計金額
+        last_name: 名前（姓）
+        first_name: 名前（名）
+        last_name_kana: フリガナ（姓）
+        first_name_kana: フリガナ（名）
+        prefecture_id: 都道府県
+        address: 市町村以下住所
+        phone_number: 電話番号
+        visit_day_id: 来店日
+        visit_time_id: 来店時間
+        token: カード情報
