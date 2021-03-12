@@ -21,14 +21,14 @@ RSpec.describe OrderMailer, type: :mailer do
       # 一番新しい送信済みメールを取得する
       last_mail = ActionMailer::Base.deliveries.last
       # 送信したメール本文の文面をチェック
-      expect(last_mail.html_part.body.to_s).to match("注文のお知らせ")
-      expect(last_mail.text_part.body.to_s).to match("注文のお知らせ")
+      expect(last_mail.html_part.body.to_s).to match('注文のお知らせ')
+      expect(last_mail.text_part.body.to_s).to match('注文のお知らせ')
     end
 
     it 'メールを実際に送り、作成できているか' do
-      expect{
+      expect do
         mail.deliver_now
-      }.to change{ ActionMailer::Base.deliveries.size }.by(1)
+      end.to change { ActionMailer::Base.deliveries.size }.by(1)
     end
   end
 end

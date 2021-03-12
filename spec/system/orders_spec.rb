@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe "メニューの注文", type: :system do
+RSpec.describe 'メニューの注文', type: :system do
   before do
     @menu = FactoryBot.create(:menu)
     @orderOrderDetail = FactoryBot.build(:order_order_detail, menu_id: @menu.id)
     @mail = OrderMailer.send_when_order(@orderOrderDetail)
   end
 
-  it "サイト来訪者はメニューの注文ができる" do
+  it 'サイト来訪者はメニューの注文ができる' do
     visit root_path
     all('.contents-box')[0].click_link nil, href: menu_path(@menu)
-    expect(page).to have_content("注文する")
+    expect(page).to have_content('注文する')
     click_on '注文する'
-    expect(page).to have_content("注文画面")
+    expect(page).to have_content('注文画面')
     expect(page).to have_selector 'img.pic'
     expect(page).to have_content(@menu.user.shop_name)
     expect(page).to have_content(@menu.name)
@@ -39,15 +39,14 @@ RSpec.describe "メニューの注文", type: :system do
     allow(charge_mock).to receive(:create)
     # Payjp::Chargeオブジェクトにcreateアクションが呼ばれたらモックを使うようにする
     allow(Payjp::Charge).to receive(:create).and_return(charge_mock)
-    expect{
+    expect do
       click_on '注文する'
-    }.not_to raise_error
+    end.not_to raise_error
     expect(@mail.to).to eq [@menu.user.email]
-    expect(page).to have_content("ご注文ありがとうございます！")
+    expect(page).to have_content('ご注文ありがとうございます！')
   end
 end
 
-
-  # expect{
-  #   click_on '注文する'
-  # }.to change{ ActionMailer::Base.deliveries.size }.by(1)
+# expect{
+#   click_on '注文する'
+# }.to change{ ActionMailer::Base.deliveries.size }.by(1)

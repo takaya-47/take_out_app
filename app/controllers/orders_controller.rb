@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   def new
     @orderOrderDetail = OrderOrderDetail.new
     @menu = Menu.find(params[:menu_id])

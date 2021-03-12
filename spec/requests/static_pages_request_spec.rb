@@ -6,7 +6,7 @@ RSpec.describe 'StaticPages', type: :request do
     expect(response.status).to eq 200
   end
 
-    it "contactアクションにリクエストすると正常にレスポンスが返ってくる" do
+  it 'contactアクションにリクエストすると正常にレスポンスが返ってくる' do
     get static_pages_contact_path
     expect(response.status).to eq 200
   end
