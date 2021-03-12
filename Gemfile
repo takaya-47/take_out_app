@@ -63,3 +63,4 @@ gem 'pry-rails'
 gem 'mini_magick'
 gem 'image_processing'
 gem 'payjp'
+gem 'rails-i18n' # 言語設定が一元化されているgemで、日本語も含まれているので大抵の内容は日本語にできる。

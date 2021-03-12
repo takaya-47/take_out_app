@@ -21,7 +21,7 @@ class User < ApplicationRecord
     validates :holiday
     validates :image
     validates :phone_number, format: { with: /\A0[1-9]\d{0,3}[-(]\d{1,4}[-)]\d{4}\z/ }
-    with_options numericality: { other_than: 0 } do
+    with_options numericality: { other_than: 0, message: 'を選択してください' } do
       validates :category_id
       validates :prefecture_id
     end

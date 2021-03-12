@@ -16,7 +16,7 @@ class OrderOrderDetail
     validates :token
   end
   # そもそもリストから選ぶ形式なので0以外についてのみ制約を設ける
-  with_options numericality: { other_than: 0 } do
+  with_options numericality: { other_than: 0, message: 'を選択してください' } do
     validates :prefecture_id
     validates :visit_day_id
     validates :visit_time_id
