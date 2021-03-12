@@ -20,7 +20,7 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# helperファイル作成のためにコメントアウトを解除
+# supportディレクトリ内のヘルパーが使えるようにコメントアウトを解除してsupportディレクトリを読み込むようにする
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
@@ -34,6 +34,7 @@ end
 RSpec.configure do |config|
    #作成したヘルパーを追加
   config.include TestHelper
+  
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

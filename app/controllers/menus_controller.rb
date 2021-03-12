@@ -33,7 +33,7 @@ class MenusController < ApplicationController
 
   def destroy
     @menu.destroy
-    flash[:notice] = 'メニューを削除しました'
+    flash[:notice] = 'メニューを削除しました！'
     redirect_to user_path(@menu.user)
   end
 

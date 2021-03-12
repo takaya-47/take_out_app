@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       @orderOrderDetail.save
       # メニューの投稿ユーザーに注文メールを送る
       OrderMailer.send_when_order(@orderOrderDetail).deliver_now
-      flash[:success] = 'ご注文ありがとうございます!'
+      flash[:success] = 'ご注文ありがとうございます！'
       redirect_to root_path
     else
       @menu = Menu.find(params[:menu_id])
