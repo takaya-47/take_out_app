@@ -28,7 +28,7 @@
       </div>
       <div class="info">
         <h4>住所</h4>
-        <p><%= @user.prefecture.name %><%= @user.address %></p>
+        <p id="address"><%= @user.prefecture.name %><%= @user.address %></p>
       </div>
     </div>
     <div class="info-box">
@@ -69,8 +69,12 @@
 </div>
 <% end %>
 
+<%# 店舗の住所をもとにgoogle map の表示 %>
+<h2 class="main-title">店舗の場所</h2>
+<div id="map" class="map"></div>
+
 <h2 class="main-title">提供中のメニュー</h2>
-<div class="main-contents">
+<div class="main-contents user-menus">
   <div class="contents-bar">
     <%# ここの@menusは、コントローラーでユーザーに紐づいて取得している %>
     <%= render partial: "user_menus", collection: @menus, as: "menu" %>
