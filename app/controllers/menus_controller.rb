@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :find_menu, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_root, except: [:show]
 
   def new
     @menu = Menu.new
@@ -45,5 +46,12 @@ class MenusController < ApplicationController
 
   def find_menu
     @menu = Menu.find(params[:id])
+  end
+
+  def move_to_root
+    if current_user.id != @menu.user.id
+      flash[:alert] = "権限がありません"
+      redirect_to root_path
+    end
   end
 end
