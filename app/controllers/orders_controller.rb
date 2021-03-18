@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
 
   def new
     @orderOrderDetail = OrderOrderDetail.new
-    find_menu
   end
 
   def create
@@ -47,7 +46,7 @@ class OrdersController < ApplicationController
 
   def move_to_root
     find_menu
-    if current_user.id == @menu.user.id
+    if current_user && current_user.id == @menu.user.id
       flash[:alert] = '権限がありません'
       redirect_to root_path
     end
