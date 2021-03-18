@@ -1,6 +1,6 @@
 class VisitTime < ActiveHash::Base
   self.data = [
-    { id: 0, name: '--' },
+    { id: 0, name: '選択してください' },
     { id: 1, name: '7時〜8時' },
     { id: 2, name: '8時〜9時' },
     { id: 3, name: '9時〜10時' },
