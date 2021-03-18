@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @menus = @user.menus
+    @menus = @user.menus.order(created_at: 'DESC')
   end
 
   def index

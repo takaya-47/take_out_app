@@ -22,12 +22,12 @@ body {
   .users {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 80%;
+    justify-content: left;
+    width: 60%;
     margin: 0 auto;
     .image-box {
-      width: 300px;
-      height: 230px;
+      width: 50%;
+      height: auto;
       margin: 10px 20px;
       .image {
         width: 100%;

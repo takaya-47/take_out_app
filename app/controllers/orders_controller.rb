@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
+  before_action :move_to_root
+
   def new
     @orderOrderDetail = OrderOrderDetail.new
-    @menu = Menu.find(params[:menu_id])
+    find_menu
   end
 
   def create
@@ -17,7 +19,7 @@ class OrdersController < ApplicationController
       flash[:success] = 'ご注文ありがとうございます！'
       redirect_to root_path
     else
-      @menu = Menu.find(params[:menu_id])
+      find_menu
       render 'new'
     end
   end
@@ -37,5 +39,17 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def find_menu
+    @menu = Menu.find(params[:menu_id])
+  end
+
+  def move_to_root
+    find_menu
+    if current_user.id == @menu.user.id
+      flash[:alert] = '権限がありません'
+      redirect_to root_path
+    end
   end
 end

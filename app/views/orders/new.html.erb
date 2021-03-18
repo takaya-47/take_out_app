@@ -48,7 +48,7 @@
 
 <%# 注文情報入力フォーム %>
 <%# フォームオブジェクトクラスのインスタンスを渡し、URLも指定する必要がある %>
-<%= form_with model: @orderOrderDetail, url: menu_orders_path(params[:menu_id].to_i), method: :post, class: "form", id: "order-form", local: true do |f| %>
+<%= form_with model: @orderOrderDetail, url: menu_orders_path(params[:menu_id].to_i), method: :post, class: "form order", id: "order-form", local: true do |f| %>
 
 <%= render "layouts/error_messages.html.erb", model: f.object %>
 
@@ -58,7 +58,7 @@
       <%= f.label :number, "カード番号", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :number, autofocus: true, class: "form-input", placeholder: "半角で入力" %>
+      <%= f.text_field :number, autofocus: true, class: "form-input", placeholder: "半角入力" %>
     </td>
   </tr>
   <tr class="field">
@@ -90,7 +90,7 @@
       <%= f.label :quantity, "数量", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :quantity, class: "form-input", id: "order_order_detail_quantity" %>
+      <%= f.text_field :quantity, placeholder: "例)2", class: "form-input", id: "order_order_detail_quantity" %>
     </td>
   </tr>
   <tr class="field">
@@ -98,7 +98,7 @@
       <%= f.label :total_price, "合計金額（税込）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :total_price, class: "form-input", id: "order_order_detail_total_price", placeholder: "自動入力" %>
+      <%= f.text_field :total_price, class: "form-input", id: "order_order_detail_total_price", placeholder: "自動入力です" %>
     </td>
   </tr>
   <tr class="field">
@@ -106,7 +106,7 @@
       <%= f.label :last_name, "名前（姓）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :last_name, class: "form-input" %>
+      <%= f.text_field :last_name, placeholder: "例)田中", class: "form-input" %>
     </td>
   </tr>
   <tr class="field">
@@ -114,7 +114,7 @@
       <%= f.label :first_name, "名前（名）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :first_name, class: "form-input" %>
+      <%= f.text_field :first_name, placeholder: "例)太郎", class: "form-input" %>
     </td>
   </tr>
   <tr class="field">
@@ -122,7 +122,7 @@
       <%= f.label :last_name_kana, "フリガナ（姓）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :last_name_kana, class: "form-input" %>
+      <%= f.text_field :last_name_kana, placeholder: "例)タナカ", class: "form-input" %>
     </td>
   </tr>
   <tr class="field">
@@ -130,7 +130,7 @@
       <%= f.label :first_name_kana, "フリガナ（名）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :first_name_kana, class: "form-input" %>
+      <%= f.text_field :first_name_kana, placeholder: "例)タロウ", class: "form-input" %>
     </td>
   </tr>
   <tr class="field">
@@ -146,15 +146,15 @@
       <%= f.label :address, "住所（市町村以下）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :address, class: "form-input" %>
+      <%= f.text_field :address, placeholder: "例)札幌市12-3", class: "form-input" %>
     </td>
   </tr>
   <tr class="field">
     <th>
-      <%= f.label :phone_number, "電話番号", placeholder: "ハイフン(-)を入れて入力", class: "form-label" %><br />
+      <%= f.label :phone_number, "電話番号", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :phone_number, class: "form-input" %>
+      <%= f.text_field :phone_number, placeholder: "ハイフン(-)あり", class: "form-input" %>
     </td>
   </tr>
   <tr class="field">

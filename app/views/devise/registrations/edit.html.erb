@@ -10,7 +10,7 @@
       <%= f.label :shop_name, "店舗名", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :shop_name, autofocus: true, class: "form-input", autocomplete: "name" %>
+      <%= f.text_field :shop_name, autofocus: true, class: "form-input", autocomplete: "name", placeholder: "お店の名前" %>
     </td>
   </tr>
   <tr class="field">
@@ -18,7 +18,7 @@
       <%= f.label :email, "メールアドレス", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.email_field :email, class: "form-input", autocomplete: "email" %>
+      <%= f.email_field :email, class: "form-input", autocomplete: "email", placeholder: "例)sample@sample.com" %>
     </td>
   </tr>
   <tr class="field">
@@ -66,7 +66,7 @@
       <%= f.label :phone_number, "電話番号", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :phone_number, class: "form-input", placeholder: "ハイフン(-)を入れて入力" %>
+      <%= f.text_field :phone_number, class: "form-input", placeholder: "ハイフン(-)あり" %>
     </td>
   </tr>
   <tr class="field">
@@ -79,7 +79,7 @@
   </tr>
   <tr class="field">
     <th>
-      <%= f.label :password, "パスワード（新）", class: "form-label" %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :password, "パスワード（新）", class: "form-label" %><br />
     </th>
     <td>
       <%= f.password_field :password, class: "form-input", autocomplete: "new-password" %>
@@ -95,10 +95,10 @@
   </tr>
   <div class="field">
     <th>
-      <%= f.label :current_password, "現在のパスワード", class: "form-label" %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.label :current_password, "現在のパスワード", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.password_field :current_password, class: "form-input", autocomplete: "current-password" %>
+      <%= f.password_field :current_password, class: "form-input", autocomplete: "current-password", placeholder: "変更内容の確認のため現在のパスワードを入力" %>
     </td>
   </div>
 </table>

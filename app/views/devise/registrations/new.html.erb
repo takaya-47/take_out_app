@@ -10,19 +10,17 @@
       <%= f.label :shop_name, "店舗名", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :shop_name, autofocus: true, autocomplete: "name", class: "form-input" %>
+      <%= f.text_field :shop_name, autofocus: true, autocomplete: "name", class: "form-input", placeholder: "お店の名前" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :email, "メールアドレス", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.email_field :email, autocomplete: "email", class: "form-input" %>
+      <%= f.email_field :email, autocomplete: "email", class: "form-input", placeholder: "例)sample@sample.com" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :password, "パスワード", class: "form-label" %>
@@ -34,16 +32,14 @@
       <%= f.password_field :password, autocomplete: "new-password", class: "form-input" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :password_confirmation, "パスワード（確認）", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input", placeholder: "パスワードを再入力" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :category_id, "カテゴリー", class: "form-label"%><br />
@@ -52,7 +48,6 @@
       <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form-select"}) %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :prefecture_id, "都道府県", class: "form-label" %><br />
@@ -61,7 +56,6 @@
       <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "form-select"}) %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :address, "住所", class: "form-label" %><br />
@@ -70,7 +64,6 @@
       <%= f.text_field :address, autocomplete: "address-level2", placeholder: "市町村以下の住所を入力", class: "form-input" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :business_hours, "営業時間", class: "form-label" %><br />
@@ -79,7 +72,6 @@
       <%= f.text_field :business_hours, placeholder: "例）午前10時〜午後６時", class: "form-input" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :holiday, "定休日", class: "form-label" %><br />
@@ -88,16 +80,14 @@
       <%= f.text_field :holiday, placeholder: "例）毎週水曜", class: "form-input" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :phone_number, "電話番号", class: "form-label" %><br />
     </th>
     <td>
-      <%= f.text_field :phone_number, placeholder: "ハイフン(-)を入れて入力", class: "form-input" %>
+      <%= f.text_field :phone_number, placeholder: "ハイフン(-)あり", class: "form-input" %>
     </td>
   </tr>
-
   <tr class="field">
     <th>
       <%= f.label :image, "店舗写真", class: "form-label" %><br />
