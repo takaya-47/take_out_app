@@ -50,7 +50,7 @@ class MenusController < ApplicationController
 
   def move_to_root
     if current_user.id != @menu.user.id
-      flash[:alert] = '権限がありません'
+      flash[:notice] = '権限がありません'
       redirect_to root_path
     end
   end
