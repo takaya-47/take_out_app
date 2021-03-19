@@ -35,6 +35,8 @@ body {
       }
     }
     .info-box {
+      width: 50%;
+      height: auto;
       margin: 10px 20px;
       .shop-name, .category, .full-address, .business-hours, .holiday {
         font-size: 1.1rem;
