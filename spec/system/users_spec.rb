@@ -158,3 +158,32 @@ RSpec.describe 'edit, updateアクション', type: :system do
     expect(current_path).to eq root_path
   end
 end
+
+RSpec.describe 'パスワードリセット機能', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+  it 'パスワードリセットメールが適切なタイミングで送信される' do
+    visit new_user_password_path
+    fill_in 'メールアドレス', with: @user.email
+    expect{
+      click_on 'リセットメール送信'
+    }.to change{ ActionMailer::Base.deliveries.size }.by(1)
+    expect(current_path).to eq new_user_session_path
+  end
+
+  it 'パスワードリセットができる' do
+    # @user.token =
+    # with_reset_password_token(token)
+    # visit edit_user_password_path(@user.reset_password_token)
+    # expect(page).to have_content('パスワード再設定')
+    # fill_in '新しいパスワード', with: 'pass1234'
+    # fill_in 'パスワード（確認）', with: 'pass1234'
+    # click_on '変更する'
+    # # expect(@user.password).to eq new_password
+  end
+
+  it 'パスワードリセットができないとき' do
+  end
+end
