@@ -152,9 +152,58 @@ RSpec.describe 'edit, updateアクション', type: :system do
     attach_file '店舗写真', "#{Rails.root}/app/assets/images/test.jpeg"
     fill_in 'パスワード（新）', with: @user.password
     fill_in 'パスワード（確認）', with: @user.password_confirmation
-    fill_in '現在のパスワード', with: @user.password
     click_on '更新する'
     expect(page).to have_content('アカウント情報を変更しました。')
     expect(current_path).to eq root_path
   end
+
+  it 'ログインしているユーザーは自身の情報をパスワードを変更せずに編集できる' do
+    log_in(@user)
+    visit user_path(@user)
+    click_on '店舗情報を編集する'
+    expect(page).to have_content('店舗情報編集')
+    fill_in '店舗名', with: @user.shop_name
+    fill_in 'メールアドレス', with: @user.email
+    select '和食', from: 'カテゴリー'
+    select '北海道', from: '都道府県'
+    fill_in '住所', with: @user.address
+    fill_in '営業時間', with: @user.business_hours
+    fill_in '定休日', with: @user.holiday
+    fill_in '電話番号', with: @user.phone_number
+    attach_file '店舗写真', "#{Rails.root}/app/assets/images/test.jpeg"
+    fill_in 'パスワード（新）', with: ''
+    fill_in 'パスワード（確認）', with: ''
+    click_on '更新する'
+    expect(page).to have_content('アカウント情報を変更しました。')
+    expect(current_path).to eq root_path
+  end
+end
+
+RSpec.describe 'パスワードリセット機能', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+  it 'パスワードリセットメールが適切なタイミングで送信される' do
+    visit new_user_password_path
+    fill_in 'メールアドレス', with: @user.email
+    expect  do
+      click_on 'リセットメール送信'
+    end.to change { ActionMailer::Base.deliveries.size }.by(1)
+    expect(current_path).to eq new_user_session_path
+  end
+
+  # it 'パスワードリセットができる' do
+  #   # @user.token =
+  #   # with_reset_password_token(token)
+  #   # visit edit_user_password_path(@user.reset_password_token)
+  #   # expect(page).to have_content('パスワード再設定')
+  #   # fill_in '新しいパスワード', with: 'pass1234'
+  #   # fill_in 'パスワード（確認）', with: 'pass1234'
+  #   # click_on '変更する'
+  #   # # expect(@user.password).to eq new_password
+  # end
+
+  # it 'パスワードリセットができないとき' do
+  # end
 end
