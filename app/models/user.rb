@@ -13,7 +13,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # パスワードは半角英数混合で８文字
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8}\z/i }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8}\z/i }, on: :create
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8}\z/i, message: 'は半角英数混合で8文字です' }, allow_blank: true, on: :update
   with_options presence: true do
     validates :shop_name
     validates :address
@@ -26,4 +27,13 @@ class User < ApplicationRecord
       validates :prefecture_id
     end
   end
+
+  def update_without_current_password(params)
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+    update(params)
+  end
+
 end
