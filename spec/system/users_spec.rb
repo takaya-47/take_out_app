@@ -187,9 +187,9 @@ RSpec.describe 'パスワードリセット機能', type: :system do
   it 'パスワードリセットメールが適切なタイミングで送信される' do
     visit new_user_password_path
     fill_in 'メールアドレス', with: @user.email
-    expect{
+    expect  do
       click_on 'リセットメール送信'
-    }.to change{ ActionMailer::Base.deliveries.size }.by(1)
+    end.to change { ActionMailer::Base.deliveries.size }.by(1)
     expect(current_path).to eq new_user_session_path
   end
 

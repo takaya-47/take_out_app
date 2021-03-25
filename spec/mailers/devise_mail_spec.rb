@@ -19,9 +19,8 @@ RSpec.describe 'deviseのメーラーテスト', type: :mailer do
   end
 
   it 'メールの件数が1件増えているか' do
-    expect{
+    expect do
       mail.deliver_now
-    }.to change{ ActionMailer::Base.deliveries.size }.by(1)
+    end.to change { ActionMailer::Base.deliveries.size }.by(1)
   end
-
 end

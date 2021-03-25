@@ -14,7 +14,8 @@ class User < ApplicationRecord
 
   # パスワードは半角英数混合で８文字
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8}\z/i }, on: :create
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8}\z/i, message: 'は半角英数混合で8文字です' }, allow_blank: true, on: :update
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8}\z/i, message: 'は半角英数混合で8文字です' }, allow_blank: true,
+                       on: :update
   with_options presence: true do
     validates :shop_name
     validates :address
@@ -35,5 +36,4 @@ class User < ApplicationRecord
     end
     update(params)
   end
-
 end
