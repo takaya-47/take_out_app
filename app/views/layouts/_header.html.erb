@@ -17,12 +17,7 @@
       <li class="header-list">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link"%>
       </li>
-      <li class="header-list">
-        <%= link_to "お問い合わせ", static_pages_contact_path, class: "header-link"%></li>
       <% else %>
-      <li class="header-list">
-        <%= link_to "登録店舗一覧", users_path, class: "header-link" %>
-      </li>
       <li class="header-list">
         <%= link_to "新規登録", new_user_registration_path, class: "header-link"%>
       </li>
@@ -30,7 +25,7 @@
         <%= link_to "ログイン", new_user_session_path, class: "header-link"%>
       </li>
       <li class="header-list">
-        <%= link_to "お問い合わせ", static_pages_contact_path, class: "header-link"%></li>
+        <%= link_to "登録店舗一覧", users_path, class: "header-link" %>
       </li>
       <% end %>
     </ul>
