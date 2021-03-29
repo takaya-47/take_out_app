@@ -55,7 +55,7 @@ https://user-images.githubusercontent.com/67499415/111724372-78f2e680-88a8-11eb-
 注文にログインは不要で、クレジットカードがあれば誰でも注文できるようになっています。メニューの詳細ページから注文ページに遷移できます。
 https://user-images.githubusercontent.com/67499415/111724744-22d27300-88a9-11eb-90c1-9b1481e2ecf8.mp4
 
-注文のあったメニューを提供している店舗に届くメールの内容
+##### 注文のあったメニューを提供している店舗に届くメールの内容
 <img width="827" alt="ordermail" src="https://user-images.githubusercontent.com/67499415/111724996-92486280-88a9-11eb-8b03-71d54a1d1e30.png">
 
 ### 店舗の場所を表示
