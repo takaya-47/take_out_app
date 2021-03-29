@@ -105,6 +105,11 @@ body {
 .main-contents.user-menus {
   margin-bottom: 60px;
   margin-top: 0;
+  .contents-bar {
+    .no-menus {
+      margin: 0 auto;
+    }
+  }
 }
 
 // devise関係のビューファイル

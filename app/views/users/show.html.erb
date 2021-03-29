@@ -76,7 +76,11 @@
 <h2 class="main-title">提供中のメニュー</h2>
 <div class="main-contents user-menus">
   <div class="contents-bar">
+    <% if @menus.any? %>
     <%# ここの@menusは、コントローラーでユーザーに紐づいて取得している %>
     <%= render partial: "user_menus", collection: @menus, as: "menu" %>
+    <% else %>
+    <p class="no-menus">現在提供中のメニューはありません</p>
+    <% end %>
   </div>
 </div>
