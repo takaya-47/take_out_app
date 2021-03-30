@@ -45,17 +45,21 @@ https://take-out-app.herokuapp.com/
 # 機能の詳細
 ### 飲食店の登録
 ヘッダーの「新規登録」から新規登録していただくと、フラッシュメッセージが表示されて新規登録が完了し、トップページ下部の新着欄に自身の店舗が表示されます。
+
 ![registration](https://user-images.githubusercontent.com/67499415/112926067-deb75c00-914d-11eb-8acd-c81ecb7d6632.gif)
 
 ### メニュー投稿
 ログインしている状態でメニューの新規投稿ができます。投稿されたメニューはトップページに新着順に表示されるほか、各店舗の詳細ページでも確認が可能です。
+
 ![menu](https://user-images.githubusercontent.com/67499415/112926166-03abcf00-914e-11eb-903e-2fc135f3ab1c.gif)
 
 ### 注文機能
 注文にログインは不要で、クレジットカードがあれば誰でも注文できるようになっています。メニューの詳細ページから注文ページに遷移できます。
+
 ![order](https://user-images.githubusercontent.com/67499415/112926260-263de800-914e-11eb-9c4c-cada1869ad44.gif)
 
-##### 注文のあったメニューを提供している店舗に届くメールの内容
+### メール送信機能
+注文のあったメニューの出品店舗様には注文メールが届きます。
 
 <img width="827" alt="ordermail" src="https://user-images.githubusercontent.com/67499415/111724996-92486280-88a9-11eb-8b03-71d54a1d1e30.png">
 
