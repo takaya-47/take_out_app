@@ -45,7 +45,7 @@ https://take-out-app.herokuapp.com/
 # 機能の詳細
 ### 飲食店の登録
 ヘッダーの「新規登録」から新規登録していただくと、フラッシュメッセージが表示されて新規登録が完了し、トップページ下部の新着欄に自身の店舗が表示されます。
-https://user-images.githubusercontent.com/67499415/112926067-deb75c00-914d-11eb-8acd-c81ecb7d6632.gif
+![registration](https://user-images.githubusercontent.com/67499415/112926067-deb75c00-914d-11eb-8acd-c81ecb7d6632.gif)
 
 ### メニュー投稿
 ログインしている状態でメニューの新規投稿ができます。投稿されたメニューはトップページに新着順に表示されるほか、各店舗の詳細ページでも確認が可能です。
