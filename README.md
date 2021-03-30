@@ -45,22 +45,23 @@ https://take-out-app.herokuapp.com/
 # 機能の詳細
 ### 飲食店の登録
 ヘッダーの「新規登録」から新規登録していただくと、フラッシュメッセージが表示されて新規登録が完了し、トップページ下部の新着欄に自身の店舗が表示されます。
-https://user-images.githubusercontent.com/67499415/112924610-6485d800-914b-11eb-83b5-406e6c407963.gif
+https://user-images.githubusercontent.com/67499415/112926067-deb75c00-914d-11eb-8acd-c81ecb7d6632.gif
 
 ### メニュー投稿
 ログインしている状態でメニューの新規投稿ができます。投稿されたメニューはトップページに新着順に表示されるほか、各店舗の詳細ページでも確認が可能です。
-https://user-images.githubusercontent.com/67499415/112924882-e4ac3d80-914b-11eb-88a3-93e8964e8393.gif
+https://user-images.githubusercontent.com/67499415/112926166-03abcf00-914e-11eb-903e-2fc135f3ab1c.gif
 
 ### 注文機能
 注文にログインは不要で、クレジットカードがあれば誰でも注文できるようになっています。メニューの詳細ページから注文ページに遷移できます。
-https://user-images.githubusercontent.com/67499415/112925196-70be6500-914c-11eb-89d7-c82c6e3218c1.gif
+https://user-images.githubusercontent.com/67499415/112926260-263de800-914e-11eb-9c4c-cada1869ad44.gif
 
 ##### 注文のあったメニューを提供している店舗に届くメールの内容
+
 <img width="827" alt="ordermail" src="https://user-images.githubusercontent.com/67499415/111724996-92486280-88a9-11eb-8b03-71d54a1d1e30.png">
 
 ### 店舗の場所を表示
 各店舗の詳細ページでは、掲載されている店舗住所をもとにGoogleマップ上にマーカーを設置しています。これによりユーザーは注文の前後に店舗の場所を正確に確認でき、大変便利です。
-https://user-images.githubusercontent.com/67499415/112923031-79ad3780-9148-11eb-95ff-bb3742826170.gif
+https://user-images.githubusercontent.com/67499415/112926365-4d94b500-914e-11eb-81af-4418d5a0b4cc.gif
 
 
 # 今後の実装予定
