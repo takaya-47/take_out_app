@@ -1,62 +1,72 @@
-<h1>注文のお知らせ</h1>
-<h2><%= @user.shop_name %> 様、以下のとおり注文がありました！</h2>
-<h2>お料理のご準備をお願いします！</h2>
-<h3>【注文内容】</h3>
-<table>
-  <tr>
-    <th>
-      <p>メニュー名</p>
-    </th>
-    <td>
-      <p><%= @menu.name %></p>
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <p>注文数</p>
-    </th>
-    <td>
-      <p><%= @orderOrderDetail.quantity %></p>
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <p>合計金額（税込）</p>
-    </th>
-    <td>
-      <p><%= @orderOrderDetail.total_price %>円</p>
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <p>ご注文者様氏名</p>
-    </th>
-    <td>
-      <p><%= @orderOrderDetail.last_name %><%= @orderOrderDetail.first_name %></p>
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <p>ご注文者様氏名（フリガナ）</p>
-    </th>
-    <td>
-      <p><%= @orderOrderDetail.last_name_kana %><%= @orderOrderDetail.first_name_kana %></p>
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <p>連絡先</p>
-    </th>
-    <td>
-      <p><%= @orderOrderDetail.phone_number %></p>
-    </td>
-  </tr>
-  <tr>
-    <th>
-      <p>来店時間</p>
-    </th>
-    <td>
-      <p><%= @visit_day %>の<%= @visit_time %></p>
-    </td>
-  </tr>
-</table>
+<div class="top-container" style="text-align:center;">
+  <h1 style="margin: 20px 0 50px 0; letter-spacing: 8px;">注文のお知らせ</h1>
+  <%= image_tag @user.image, size: '300x240' %>
+  <h2><%= @user.shop_name %> 様、以下のとおり注文がありました！</h2>
+  <h2>お料理のご準備をお願いします！</h2>
+</div>
+
+<div class="middle-container" style="margin-top: 100px;">
+  <h3 style="text-align:center;">【注文内容】</h3>
+  <table style="text-align:center; margin: 0 auto; background-color: #edd5be; border-collapse: collapse; border: 1px solid black; width: 40%;">
+    <tr>
+      <th style="border: dashed 1px black; width: 50%;">
+        <p>メニュー名</p>
+      </th>
+      <td style="border: dashed 1px black; width: 50%;">
+        <p><%= @menu.name %></p>
+      </td>
+    </tr>
+    <tr>
+      <th style="border: dashed 1px black; width: 50%;">
+        <p>注文数</p>
+      </th>
+      <td style="border: dashed 1px black; width: 50%;">
+        <p><%= @orderOrderDetail.quantity %></p>
+      </td>
+    </tr>
+    <tr>
+      <th style="border: dashed 1px black; width: 50%;">
+        <p>合計金額（税込）</p>
+      </th>
+      <td style="border: dashed 1px black; width: 50%;">
+        <p><%= @orderOrderDetail.total_price %>円</p>
+      </td>
+    </tr>
+    <tr>
+      <th style="border: dashed 1px black; width: 50%;">
+        <p>ご注文者様氏名</p>
+      </th>
+      <td style="border: dashed 1px black; width: 50%;">
+        <p><%= @orderOrderDetail.last_name %><%= @orderOrderDetail.first_name %></p>
+      </td>
+    </tr>
+    <tr>
+      <th style="border: dashed 1px black; width: 50%;">
+        <p>ご注文者様氏名（フリガナ）</p>
+      </th>
+      <td style="border: dashed 1px black; width: 50%;">
+        <p><%= @orderOrderDetail.last_name_kana %><%= @orderOrderDetail.first_name_kana %></p>
+      </td>
+    </tr>
+    <tr>
+      <th style="border: dashed 1px black; width: 50%;">
+        <p>連絡先</p>
+      </th>
+      <td style="border: dashed 1px black; width: 50%;">
+        <p><%= @orderOrderDetail.phone_number %></p>
+      </td>
+    </tr>
+    <tr>
+      <th style="border: dashed 1px black; width: 50%;">
+        <p>来店時間</p>
+      </th>
+      <td style="border: dashed 1px black; width: 50%;">
+        <p><%= @visit_day %>の<%= @visit_time %></p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="bottom-container" style="margin: 50px 0 50px 0;">
+  <%= link_to "Take_Out_App", "https://take-out-app.herokuapp.com/", style: "display: block; text-align: center; text-decoration: none; color: #ed7700;" %>
+</div>
