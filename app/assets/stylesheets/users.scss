@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$theme1: #edd5be;
-$theme2: #eda65f;
-$theme3: #ed7700;
+$theme1: #4ECDC4;
+$theme2: #FF6B6B;
+$theme3: #F7FFF7;
+$sub1: #FFE66D;
+$sub2: #FFA96C;
+$sub3: #1A535C;
 
 body {
   width: 80vw;
@@ -14,7 +17,7 @@ body {
 // users/index.html.erb
 .main-title {
   margin: 15px 0;
-  text-shadow: $theme1 4px 4px;
+  text-shadow: $theme1 1px 1px 2px;
   text-align: center;
 }
 
@@ -89,10 +92,24 @@ body {
   background-color: $theme1;
   color: $theme3;
   text-decoration: none;
-  box-shadow: 5px 5px 10px $theme2;
+  box-shadow: 5px 5px 10px $sub3;
   &:hover {
     background-color: $theme3;
     color: $theme1;
+  }
+}
+
+.button.delete {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: $theme2;
+  color: $theme3;
+  text-decoration: none;
+  box-shadow: 5px 5px 10px $sub3;
+
+  &:hover {
+    background-color: $theme3;
+    color: $theme2;
   }
 }
 
