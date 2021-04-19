@@ -34,7 +34,7 @@ class MenusController < ApplicationController
 
   def destroy
     @menu.destroy
-    flash[:notice] = 'メニューを削除しました！'
+    flash[:success] = 'メニューを削除しました！'
     redirect_to user_path(@menu.user)
   end
 
@@ -50,7 +50,7 @@ class MenusController < ApplicationController
 
   def move_to_root
     if current_user.id != @menu.user.id
-      flash[:notice] = '権限がありません'
+      flash[:alert] = '権限がありません'
       redirect_to root_path
     end
   end
