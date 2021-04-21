@@ -3,10 +3,14 @@
     <%= link_to "Take_Out_App", root_path, class: "header-logo" %>
   </div>
   <div class="header-right">
-    <ul class="header-menu">
+    <p class="hamburger-icon" id="hamburger-icon"><i class="fas fa-bars"></i></p>
+    <ul class="header-menu" id="header-menu">
       <% if user_signed_in? %>
       <li class="header-list">
-        <%= link_to current_user.shop_name, user_path(current_user.id), class: "header-link" %>
+        <p><i class="far fa-window-close" id="close"></i></p>
+      </li>
+      <li class="header-list">
+        <%= link_to "マイページ", user_path(current_user.id), class: "header-link" %>
       </li>
       <li class="header-list">
         <%= link_to "メニュー投稿", new_menu_path, class: "header-link" %>

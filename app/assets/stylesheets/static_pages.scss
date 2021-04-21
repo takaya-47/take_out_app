@@ -11,8 +11,7 @@ $sub3: #1A535C;
 
 @media screen and (max-width:639px) {
   body {
-    width: 80vw;
-    margin: 0 auto;
+    width: 100vw;
   }
 
   // 共通する部品に関するレイアウトを記述
@@ -27,7 +26,7 @@ $sub3: #1A535C;
       .header-logo {
         display: block;
         text-decoration: none;
-        font-size: 2.2rem;
+        font-size: 1.1rem;
         color: $theme3;
         font-weight: bold;
       }
@@ -172,11 +171,11 @@ $sub3: #1A535C;
       display: block;
       text-decoration: none;
       padding: 10px;
-      margin-top: 20px;
+      margin-top: 15px;
       background-color: $theme1;
       color: white;
       box-shadow: $sub3 0 5px;
-
+      font-size: 1.2rem;
       &:active {
         position: relative;
         top: 5px;
@@ -189,7 +188,7 @@ $sub3: #1A535C;
 
 @media only screen and (min-width:640px) and (max-width:1023px) {
   body {
-    width: 80vw;
+    width: 90vw;
     margin: 0 auto;
   }
 
@@ -198,38 +197,57 @@ $sub3: #1A535C;
     background-color: $theme1;
     display: flex;
     justify-content: space-between;
-    padding: 10px 50px;
+    padding: 10px 40px;
     align-items: center;
 
     .header-left {
       .header-logo {
         display: block;
         text-decoration: none;
-        font-size: 2.2rem;
+        font-size: 2.0rem;
         color: $theme3;
         font-weight: bold;
       }
     }
 
     .header-right {
+      .hamburger-icon {
+        color: $theme3;
+        font-size: 1.8rem;
+      }
       .header-menu {
         display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -50vw;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.8);
 
         .header-list {
           list-style: none;
-          margin: 0 10px;
+          padding: 20px;
 
+          #close {
+            color: $theme3;
+            font-size: 1.8rem;
+          }
           .header-link {
             color: $theme3;
+            font-size: 1.4rem;
             text-decoration: none;
-
-            &:hover {
-              font-weight: bold;
-            }
+          }
+          &:hover {
+            background-color: $theme2;
           }
         }
       }
     }
+  }
+
+  .show {
+    transform: translateX(-50vw);
+    transition: all 0.2s;
   }
 
   .footer-container {
@@ -281,7 +299,7 @@ $sub3: #1A535C;
 
     .main-image {
       background-image: image-url('test.jpeg');
-      height: 400px;
+      height: 350px;
       background-size: cover;
       background-repeat: no-repeat;
       margin: 10px 0;
@@ -316,6 +334,7 @@ $sub3: #1A535C;
       display: inline-block;
       margin-top: 15px;
       text-shadow: $theme1 1px 1px 2px;
+      font-size: 1.6rem;
     }
 
     .contents-bar {
@@ -349,12 +368,12 @@ $sub3: #1A535C;
     .home-button {
       display: block;
       text-decoration: none;
-      padding: 10px;
-      margin-top: 20px;
+      padding: 20px;
+      margin-top: 15px;
       background-color: $theme1;
       color: white;
       box-shadow: $sub3 0 5px;
-
+      font-size: 1.2rem;
       &:active {
         position: relative;
         top: 5px;
@@ -365,7 +384,6 @@ $sub3: #1A535C;
   }
 }
 
-/*pc用のcssを記述*/
 @media screen and (min-width:1024px) {
   body {
     width: 90vw;
@@ -377,7 +395,7 @@ $sub3: #1A535C;
     background-color: $theme1;
     display: flex;
     justify-content: space-between;
-    padding: 10px 50px;
+    padding: 10px 30px;
     align-items: center;
     .header-left {
       .header-logo {
@@ -389,14 +407,21 @@ $sub3: #1A535C;
       }
     }
     .header-right {
+      .hamburger-icon {
+        display: none;
+      }
       .header-menu {
         display: flex;
         .header-list {
           list-style: none;
           margin: 0 10px;
+          #close {
+            display: none;
+          }
           .header-link {
             color: $theme3;
             text-decoration: none;
+            font-size: 1.1rem;
             &:hover {
               font-weight: bold;
             }
@@ -510,11 +535,12 @@ $sub3: #1A535C;
     .home-button {
       display: block;
       text-decoration: none;
-      padding: 10px;
-      margin-top: 20px;
+      padding: 20px;
+      margin-top: 15px;
       background-color: $theme1;
       color: white;
       box-shadow: $sub3 0 5px;
+      font-size: 1.1rem;
       &:active {
         position: relative;
         top: 5px;
