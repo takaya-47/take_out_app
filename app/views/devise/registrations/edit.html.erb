@@ -1,4 +1,4 @@
-<h2 class="main-title">店舗情報編集</h2>
+<h2 class="main-title top">店舗情報編集</h2>
 
 <%= form_with model: @user, url: user_registration_path, method: :patch, class: "form", local: true do |f| %>
 
@@ -96,6 +96,6 @@
 </table>
 
 <div class="actions">
-  <%= f.submit "更新する", class: "button edit" %>
+  <%= f.submit "更新する", class: "button registration" %>
 </div>
 <% end %>

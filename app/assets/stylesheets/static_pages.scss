@@ -15,42 +15,81 @@ $sub3: #1A535C;
   }
 
   // 共通する部品に関するレイアウトを記述
-  .header-container {
-    background-color: $theme1;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 50px;
-    align-items: center;
+  header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
 
-    .header-left {
-      .header-logo {
-        display: block;
-        text-decoration: none;
-        font-size: 1.1rem;
-        color: $theme3;
-        font-weight: bold;
+    .header-container {
+      background-color: $theme1;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      align-items: center;
+
+      .header-left {
+        .header-logo {
+          display: block;
+          text-decoration: none;
+          font-size: 1.4rem;
+          color: $theme3;
+          font-weight: bold;
+        }
       }
-    }
 
-    .header-right {
-      .header-menu {
-        display: flex;
+      .header-right {
+        .hamburger-icon {
+          color: $theme3;
+          font-size: 1.8rem;
+        }
 
-        .header-list {
-          list-style: none;
-          margin: 0 10px;
+        .header-menu {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: -50vh;
+          right: 0;
+          z-index: 10;
+          background-color: rgba(0, 0, 0, 0.8);
+          border: 1px solid $theme3;
+          width: 100%;
 
-          .header-link {
-            color: $theme3;
-            text-decoration: none;
+          .header-list:not(.last) {
+            border-bottom: 1px dotted $theme3;
+          }
+
+          .header-list {
+            list-style: none;
+
+            #close {
+              color: $theme3;
+              font-size: 1.8rem;
+              padding: 20px;
+              display: block;
+            }
+
+            .header-link {
+              color: $theme3;
+              font-size: 1.4rem;
+              text-decoration: none;
+              display: block;
+              padding: 20px;
+            }
 
             &:hover {
-              font-weight: bold;
+              background-color: $theme2;
             }
           }
         }
       }
     }
+  }
+
+  .show {
+    transform: translateY(50vh);
+    transition: all 0.2s;
   }
 
   .footer-container {
@@ -77,8 +116,8 @@ $sub3: #1A535C;
 
   // フラッシュメッセージ
   .alert {
-    width: 50%;
-    margin: 15px auto 0;
+    width: 90%;
+    margin: 72px auto 0;
     text-align: center;
     padding: 15px 0;
     font-size: 1.1rem;
@@ -99,13 +138,15 @@ $sub3: #1A535C;
 
   .top-contents {
     position: relative;
+    margin-top: 10px;
+    padding-top: 62px;
 
     .main-image {
       background-image: image-url('test.jpeg');
-      height: 400px;
+      width: 100%;
+      height: 30vh;
       background-size: cover;
       background-repeat: no-repeat;
-      margin: 10px 0;
       box-shadow: 10px 10px 10px lightgray;
     }
 
@@ -114,15 +155,16 @@ $sub3: #1A535C;
       top: 0;
       left: 0;
       width: 100%;
-      height: 400px;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding-top: 72px;
 
       h1 {
         text-shadow: 1px 1px 5px $theme1;
         color: white;
-        font-size: 2.8rem;
+        font-size: 1.8rem;
       }
     }
   }
@@ -141,10 +183,11 @@ $sub3: #1A535C;
 
     .contents-bar {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      overflow-x: scroll;
+      overflow-y: scroll;
       width: 100%;
+      height: 55vh;
 
       .contents-box {
         margin: 15px;
@@ -171,7 +214,7 @@ $sub3: #1A535C;
       display: block;
       text-decoration: none;
       padding: 10px;
-      margin-top: 15px;
+      margin-top: 40px;
       background-color: $theme1;
       color: white;
       box-shadow: $sub3 0 5px;
@@ -193,52 +236,68 @@ $sub3: #1A535C;
   }
 
   // 共通する部品に関するレイアウトを記述
-  .header-container {
-    background-color: $theme1;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-    align-items: center;
+  header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 90vw;
 
-    .header-left {
-      .header-logo {
-        display: block;
-        text-decoration: none;
-        font-size: 2.0rem;
-        color: $theme3;
-        font-weight: bold;
+    .header-container {
+      background-color: $theme1;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 40px;
+      align-items: center;
+
+      .header-left {
+        .header-logo {
+          display: block;
+          text-decoration: none;
+          font-size: 2.0rem;
+          color: $theme3;
+          font-weight: bold;
+        }
       }
-    }
 
-    .header-right {
-      .hamburger-icon {
-        color: $theme3;
-        font-size: 1.8rem;
-      }
-      .header-menu {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: -50vw;
-        z-index: 10;
-        background-color: rgba(0, 0, 0, 0.8);
+      .header-right {
+        .hamburger-icon {
+          color: $theme3;
+          font-size: 1.8rem;
+        }
+        .header-menu {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: 0;
+          right: -50vw;
+          z-index: 10;
+          background-color: rgba(0, 0, 0, 0.8);
+          width: 40%;
+          border: 1px solid $theme3;
 
-        .header-list {
-          list-style: none;
-          padding: 20px;
-
-          #close {
-            color: $theme3;
-            font-size: 1.8rem;
+          .header-list:not(.last) {
+            border-bottom: 1px dotted $theme3;
           }
-          .header-link {
-            color: $theme3;
-            font-size: 1.4rem;
-            text-decoration: none;
-          }
-          &:hover {
-            background-color: $theme2;
+
+          .header-list {
+            list-style: none;
+
+            #close {
+              color: $theme3;
+              font-size: 1.8rem;
+              padding: 20px;
+              display: block;
+            }
+            .header-link {
+              color: $theme3;
+              font-size: 1.4rem;
+              text-decoration: none;
+              padding: 20px;
+              display: block;
+            }
+            &:hover {
+              background-color: $theme2;
+            }
           }
         }
       }
@@ -275,7 +334,7 @@ $sub3: #1A535C;
   // フラッシュメッセージ
   .alert {
     width: 50%;
-    margin: 15px auto 0;
+    margin: 78px auto 0;
     text-align: center;
     padding: 15px 0;
     font-size: 1.1rem;
@@ -296,13 +355,14 @@ $sub3: #1A535C;
 
   .top-contents {
     position: relative;
+    margin-top: 10px;
+    padding-top: 68px;
 
     .main-image {
       background-image: image-url('test.jpeg');
       height: 350px;
       background-size: cover;
       background-repeat: no-repeat;
-      margin: 10px 0;
       box-shadow: 10px 10px 10px lightgray;
     }
 
@@ -311,10 +371,11 @@ $sub3: #1A535C;
       top: 0;
       left: 0;
       width: 100%;
-      height: 400px;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding-top: 78px;
 
       h1 {
         text-shadow: 1px 1px 5px $theme1;
@@ -369,7 +430,7 @@ $sub3: #1A535C;
       display: block;
       text-decoration: none;
       padding: 20px;
-      margin-top: 15px;
+      margin-top: 40px;
       background-color: $theme1;
       color: white;
       box-shadow: $sub3 0 5px;
@@ -386,44 +447,50 @@ $sub3: #1A535C;
 
 @media screen and (min-width:1024px) {
   body {
-    width: 90vw;
+    width: 80vw;
     margin: 0 auto;
   }
 
   // 共通する部品に関するレイアウトを記述
-  .header-container {
-    background-color: $theme1;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 30px;
-    align-items: center;
-    .header-left {
-      .header-logo {
-        display: block;
-        text-decoration: none;
-        font-size: 2.2rem;
-        color: $theme3;
-        font-weight: bold;
+  header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 80vw;
+    .header-container {
+      background-color: $theme1;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 30px;
+      align-items: center;
+      .header-left {
+        .header-logo {
+          display: block;
+          text-decoration: none;
+          font-size: 2.2rem;
+          color: $theme3;
+          font-weight: bold;
+        }
       }
-    }
-    .header-right {
-      .hamburger-icon {
-        display: none;
-      }
-      .header-menu {
-        display: flex;
-        .header-list {
-          list-style: none;
-          margin: 0 10px;
-          #close {
-            display: none;
-          }
-          .header-link {
-            color: $theme3;
-            text-decoration: none;
-            font-size: 1.1rem;
-            &:hover {
-              font-weight: bold;
+      .header-right {
+        .hamburger-icon {
+          display: none;
+        }
+        .header-menu {
+          display: flex;
+          .header-list {
+            list-style: none;
+            margin: 0 10px;
+            #close {
+              display: none;
+            }
+            .header-link {
+              color: $theme3;
+              text-decoration: none;
+              font-size: 1.1rem;
+              &:hover {
+                font-weight: bold;
+              }
             }
           }
         }
@@ -453,7 +520,7 @@ $sub3: #1A535C;
   // フラッシュメッセージ
   .alert {
     width: 50%;
-    margin: 15px auto 0;
+    margin: 83px auto 0;
     text-align: center;
     padding: 15px 0;
     font-size: 1.1rem;
@@ -474,23 +541,28 @@ $sub3: #1A535C;
 
   .top-contents {
     position: relative;
+    margin-top: 10px;
+    padding-top: 73px;
+
     .main-image {
       background-image: image-url('test.jpeg');
-      height: 400px;
+      height: 500px;
       background-size: cover;
       background-repeat: no-repeat;
-      margin: 10px 0;
       box-shadow: 10px 10px 10px lightgray;
     }
+
     .message {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 400px;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding-top: 83px;
+
       h1 {
         text-shadow: 1px 1px 5px $theme1;
         color: white;
@@ -536,7 +608,7 @@ $sub3: #1A535C;
       display: block;
       text-decoration: none;
       padding: 20px;
-      margin-top: 15px;
+      margin-top: 40px;
       background-color: $theme1;
       color: white;
       box-shadow: $sub3 0 5px;
