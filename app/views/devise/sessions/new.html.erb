@@ -1,4 +1,4 @@
-<h2 class="main-title">ログイン</h2>
+<h2 class="main-title top">ログイン</h2>
 
 <%= form_with model: @user, url: new_user_session_path, class: "form", local: true do |f| %>
 
@@ -30,7 +30,7 @@
 <% end %>
 
 <div class="actions">
-  <%= f.submit "ログインする", class: "button" %>
+  <%= f.submit "ログインする", class: "button registration" %>
 </div>
 <% end %>
 

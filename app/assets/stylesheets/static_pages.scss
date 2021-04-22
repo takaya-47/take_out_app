@@ -9,153 +9,616 @@ $sub1: #FFE66D;
 $sub2: #FFA96C;
 $sub3: #1A535C;
 
-body {
-  width: 80vw;
-  margin: 0 auto;
-}
+@media screen and (max-width:639px) {
+  body {
+    width: 100vw;
+  }
 
-// 共通する部品に関するレイアウトを記述
-.header-container {
-  background-color: $theme1;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 50px;
-  align-items: center;
-  .header-left {
-    .header-logo {
+  // 共通する部品に関するレイアウトを記述
+  header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    .header-container {
+      background-color: $theme1;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      align-items: center;
+
+      .header-left {
+        .header-logo {
+          display: block;
+          text-decoration: none;
+          font-size: 1.4rem;
+          color: $theme3;
+          font-weight: bold;
+        }
+      }
+
+      .header-right {
+        .hamburger-icon {
+          color: $theme3;
+          font-size: 1.8rem;
+        }
+
+        .header-menu {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: -50vh;
+          right: 0;
+          z-index: 10;
+          background-color: rgba(0, 0, 0, 0.8);
+          border: 1px solid $theme3;
+          width: 100%;
+
+          .header-list:not(.last) {
+            border-bottom: 1px dotted $theme3;
+          }
+
+          .header-list {
+            list-style: none;
+
+            #close {
+              color: $theme3;
+              font-size: 1.8rem;
+              padding: 20px;
+              display: block;
+            }
+
+            .header-link {
+              color: $theme3;
+              font-size: 1.4rem;
+              text-decoration: none;
+              display: block;
+              padding: 20px;
+            }
+
+            &:hover {
+              background-color: $theme2;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .show {
+    transform: translateY(50vh);
+    transition: all 0.2s;
+  }
+
+  .footer-container {
+    background-color: $theme1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer-inner {
+      color: $theme3;
+
+      h3 {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      p {
+        text-align: center;
+        font-size: 0.7em;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  // フラッシュメッセージ
+  .alert {
+    width: 90%;
+    margin: 72px auto 0;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    color: white;
+  }
+
+  .alert.alert-success {
+    background-color: $sub1;
+  }
+
+  .alert.alert-notice {
+    background-color: $sub2;
+  }
+
+  .alert.alert-alert {
+    background-color: $sub3;
+  }
+
+  .top-contents {
+    position: relative;
+    margin-top: 10px;
+    padding-top: 62px;
+
+    .main-image {
+      background-image: image-url('test.jpeg');
+      width: 100%;
+      height: 30vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 10px 10px 10px lightgray;
+    }
+
+    .message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 72px;
+
+      h1 {
+        text-shadow: 1px 1px 5px $theme1;
+        color: white;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .main-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0;
+
+    .main-title {
+      display: inline-block;
+      margin-top: 15px;
+      text-shadow: $theme1 1px 1px 2px;
+    }
+
+    .contents-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: scroll;
+      width: 100%;
+      height: 55vh;
+
+      .contents-box {
+        margin: 15px;
+        padding: 15px;
+
+        .contents-link {
+          text-decoration: none;
+          color: black;
+
+          .image-box {
+            width: 250px;
+            height: 250px;
+
+            .contents-image {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .home-button {
       display: block;
       text-decoration: none;
-      font-size: 2.2rem;
-      color: $theme3;
-      font-weight: bold;
+      padding: 10px;
+      margin-top: 40px;
+      background-color: $theme1;
+      color: white;
+      box-shadow: $sub3 0 5px;
+      font-size: 1.2rem;
+      &:active {
+        position: relative;
+        top: 5px;
+        left: 0px;
+        box-shadow: none;
+      }
     }
   }
-  .header-right {
-    .header-menu {
+}
+
+@media only screen and (min-width:640px) and (max-width:1023px) {
+  body {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  // 共通する部品に関するレイアウトを記述
+  header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 90vw;
+
+    .header-container {
+      background-color: $theme1;
       display: flex;
-      .header-list {
-        list-style: none;
-        margin: 0 10px;
-        .header-link {
-          color: $theme3;
+      justify-content: space-between;
+      padding: 10px 40px;
+      align-items: center;
+
+      .header-left {
+        .header-logo {
+          display: block;
           text-decoration: none;
-          &:hover {
-            font-weight: bold;
+          font-size: 2.0rem;
+          color: $theme3;
+          font-weight: bold;
+        }
+      }
+
+      .header-right {
+        .hamburger-icon {
+          color: $theme3;
+          font-size: 1.8rem;
+        }
+        .header-menu {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: 0;
+          right: -50vw;
+          z-index: 10;
+          background-color: rgba(0, 0, 0, 0.8);
+          width: 40%;
+          border: 1px solid $theme3;
+
+          .header-list:not(.last) {
+            border-bottom: 1px dotted $theme3;
+          }
+
+          .header-list {
+            list-style: none;
+
+            #close {
+              color: $theme3;
+              font-size: 1.8rem;
+              padding: 20px;
+              display: block;
+            }
+            .header-link {
+              color: $theme3;
+              font-size: 1.4rem;
+              text-decoration: none;
+              padding: 20px;
+              display: block;
+            }
+            &:hover {
+              background-color: $theme2;
+            }
           }
         }
       }
     }
   }
-}
 
-.footer-container {
-  background-color: $theme1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .footer-inner {
-    color: $theme3;
-    h3 {
-      text-align: center;
-      margin: 10px 0;
-    }
-    p {
-      text-align: center;
-      font-size: 0.7em;
-      margin-bottom: 10px;
-    }
+  .show {
+    transform: translateX(-50vw);
+    transition: all 0.2s;
   }
-}
 
-// フラッシュメッセージ
-.alert {
-  width: 50%;
-  margin: 15px auto 0;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 1.1rem;
-  color: white;
-}
-
-.alert.alert-success {
-  background-color: $sub1;
-}
-
-.alert.alert-notice {
-  background-color: $sub2;
-}
-
-.alert.alert-alert {
-  background-color: $sub3;
-}
-
-.top-contents {
-  position: relative;
-  .main-image {
-    background-image: image-url('test.jpeg');
-    height: 500px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: 10px;
-    box-shadow: 10px 10px 10px lightgray;
-  }
-  .main-message {
-    position: absolute;
-    top: 48%;
-    left: 32%;
-    text-shadow: 1px 1px 5px $theme1;
-    color: white;
-    font-size: 2.8rem;
-  }
-}
-
-.main-contents {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 60px 0;
-  .main-title {
-    display: inline-block;
-    margin-top: 15px;
-    text-shadow: $theme1 1px 1px 2px;
-  }
-  .contents-bar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow-x: scroll;
-    width: 100%;
-    .contents-box {
-      margin: 15px;
-      padding: 15px;
-      .contents-link {
-        text-decoration: none;
-        color: black;
-        .image-box {
-          width: 250px;
-          height: 250px;
-          .contents-image {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-    }
-  }
-  .home-button {
-    display: block;
-    text-decoration: none;
-    padding: 10px;
-    margin-top: 20px;
+  .footer-container {
     background-color: $theme1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer-inner {
+      color: $theme3;
+
+      h3 {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      p {
+        text-align: center;
+        font-size: 0.7em;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  // フラッシュメッセージ
+  .alert {
+    width: 50%;
+    margin: 78px auto 0;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
     color: white;
-    box-shadow: $sub3 0 5px;
-    &:active {
-      position: relative;
-      top: 5px;
-      left: 0px;
-      box-shadow: none;
+  }
+
+  .alert.alert-success {
+    background-color: $sub1;
+  }
+
+  .alert.alert-notice {
+    background-color: $sub2;
+  }
+
+  .alert.alert-alert {
+    background-color: $sub3;
+  }
+
+  .top-contents {
+    position: relative;
+    margin-top: 10px;
+    padding-top: 68px;
+
+    .main-image {
+      background-image: image-url('test.jpeg');
+      height: 350px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 10px 10px 10px lightgray;
+    }
+
+    .message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 78px;
+
+      h1 {
+        text-shadow: 1px 1px 5px $theme1;
+        color: white;
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  .main-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0;
+
+    .main-title {
+      display: inline-block;
+      margin-top: 15px;
+      text-shadow: $theme1 1px 1px 2px;
+      font-size: 1.6rem;
+    }
+
+    .contents-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow-x: scroll;
+      width: 100%;
+
+      .contents-box {
+        margin: 15px;
+        padding: 15px;
+
+        .contents-link {
+          text-decoration: none;
+          color: black;
+
+          .image-box {
+            width: 250px;
+            height: 250px;
+
+            .contents-image {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .home-button {
+      display: block;
+      text-decoration: none;
+      padding: 20px;
+      margin-top: 40px;
+      background-color: $theme1;
+      color: white;
+      box-shadow: $sub3 0 5px;
+      font-size: 1.2rem;
+      &:active {
+        position: relative;
+        top: 5px;
+        left: 0px;
+        box-shadow: none;
+      }
     }
   }
 }
 
+@media screen and (min-width:1024px) {
+  body {
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  // 共通する部品に関するレイアウトを記述
+  header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 80vw;
+    .header-container {
+      background-color: $theme1;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 30px;
+      align-items: center;
+      .header-left {
+        .header-logo {
+          display: block;
+          text-decoration: none;
+          font-size: 2.2rem;
+          color: $theme3;
+          font-weight: bold;
+        }
+      }
+      .header-right {
+        .hamburger-icon {
+          display: none;
+        }
+        .header-menu {
+          display: flex;
+          .header-list {
+            list-style: none;
+            margin: 0 10px;
+            #close {
+              display: none;
+            }
+            .header-link {
+              color: $theme3;
+              text-decoration: none;
+              font-size: 1.1rem;
+              &:hover {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-container {
+    background-color: $theme1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer-inner {
+      color: $theme3;
+      h3 {
+        text-align: center;
+        margin: 10px 0;
+      }
+      p {
+        text-align: center;
+        font-size: 0.7em;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  // フラッシュメッセージ
+  .alert {
+    width: 50%;
+    margin: 83px auto 0;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    color: white;
+  }
+
+  .alert.alert-success {
+    background-color: $sub1;
+  }
+
+  .alert.alert-notice {
+    background-color: $sub2;
+  }
+
+  .alert.alert-alert {
+    background-color: $sub3;
+  }
+
+  .top-contents {
+    position: relative;
+    margin-top: 10px;
+    padding-top: 73px;
+
+    .main-image {
+      background-image: image-url('test.jpeg');
+      height: 500px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 10px 10px 10px lightgray;
+    }
+
+    .message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 83px;
+
+      h1 {
+        text-shadow: 1px 1px 5px $theme1;
+        color: white;
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  .main-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0;
+    .main-title {
+      display: inline-block;
+      margin-top: 15px;
+      text-shadow: $theme1 1px 1px 2px;
+    }
+    .contents-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow-x: scroll;
+      width: 100%;
+      .contents-box {
+        margin: 15px;
+        padding: 15px;
+        .contents-link {
+          text-decoration: none;
+          color: black;
+          .image-box {
+            width: 250px;
+            height: 250px;
+            .contents-image {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    .home-button {
+      display: block;
+      text-decoration: none;
+      padding: 20px;
+      margin-top: 40px;
+      background-color: $theme1;
+      color: white;
+      box-shadow: $sub3 0 5px;
+      font-size: 1.1rem;
+      &:active {
+        position: relative;
+        top: 5px;
+        left: 0px;
+        box-shadow: none;
+      }
+    }
+  }
+}

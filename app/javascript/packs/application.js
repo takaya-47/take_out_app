@@ -10,6 +10,7 @@ require("channels")
 require("../card")
 require("../calc")
 require("../google_map")
+require("../responsive")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

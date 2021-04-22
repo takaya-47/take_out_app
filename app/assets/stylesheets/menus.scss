@@ -2,19 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// menus/show.html.erb
-.buttons-area {
-  display: flex;
-  justify-content: center;
-  .button-area.left {
+@media screen and (max-width:639px) {
+  .buttons-area {
+    display: flex;
+    flex-direction: column;
+    .button-area.left {
+      margin-bottom: 20px;
+    }
+  }
+
+  .button.menu {
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+
+  #menu-price {
+    display: inline-block;
+  }
+
+}
+
+@media only screen and (min-width:640px) and (max-width:1023px) {
+  // menus/show.html.erb
+  .buttons-area {
+    display: flex;
+    justify-content: center;
+
+    .button-area.left {
+      margin-right: 20px;
+    }
+  }
+
+  .button.menu {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  #menu-price {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  // menus/show.html.erb
+  .buttons-area {
+    display: flex;
+    justify-content: center;
+    .button-area.left {
     margin-right: 20px;
   }
 }
 
 .button.menu {
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 #menu-price {
   display: inline-block;
+}
 }

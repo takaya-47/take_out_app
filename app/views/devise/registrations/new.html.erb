@@ -1,4 +1,4 @@
-<h2 class="main-title">新規登録</h2>
+<h2 class="main-title top">新規登録</h2>
 
 <%= form_with model: @user, url: user_registration_path, method: :post, class: "form", local: true do |f| %>
 
@@ -99,7 +99,7 @@
 </table>
 
 <div class="actions">
-  <%= f.submit "登録する", class: "button" %>
+  <%= f.submit "登録する", class: "button registration" %>
 </div>
 <% end %>
 
