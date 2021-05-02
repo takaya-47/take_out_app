@@ -10,6 +10,7 @@ $sub2: #FFA96C;
 $sub3: #1A535C;
 
 @media screen and (max-width:639px) {
+
   // users/index.html.erb
   .main-title {
     margin: 15px 0;
@@ -211,6 +212,7 @@ $sub3: #1A535C;
 }
 
 @media only screen and (min-width:640px) and (max-width:1023px) {
+
   // users/index.html.erb
   .main-title {
     margin: 15px 0;
@@ -265,8 +267,10 @@ $sub3: #1A535C;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
+
     .main-image {
       width: 60%;
+
       .pic {
         width: 100%;
         height: auto;
@@ -308,6 +312,7 @@ $sub3: #1A535C;
     text-decoration: none;
     box-shadow: 5px 5px 10px $sub3;
     font-size: 1.1rem;
+
     &:hover {
       background-color: $theme3;
       color: $theme1;
@@ -425,20 +430,28 @@ $sub3: #1A535C;
       justify-content: left;
       width: 60%;
       margin: 0 auto;
+
       .image-box {
         width: 50%;
         height: auto;
         margin: 10px 20px;
+
         .image {
           width: 100%;
           height: 100%;
         }
       }
+
       .info-box {
         width: 50%;
         height: auto;
         margin: 10px 20px;
-        .shop-name, .category, .full-address, .business-hours, .holiday {
+
+        .shop-name,
+        .category,
+        .full-address,
+        .business-hours,
+        .holiday {
           font-size: 1.1rem;
           margin-bottom: 10px;
         }
@@ -452,21 +465,26 @@ $sub3: #1A535C;
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 40px;
+
     .main-image {
-      width:45%;
+      width: 45%;
+
       .pic {
         width: 100%;
         height: auto;
       }
     }
+
     .main-info {
       width: 40%;
       padding: 15px 0 0;
+
       .info-box {
         display: flex;
         align-items: center;
         font-size: 1.1rem;
         margin-bottom: 20px;
+
         .icon {
           margin-right: 20px;
           width: 30px;
@@ -478,6 +496,7 @@ $sub3: #1A535C;
 
   .button-area {
     margin-bottom: 40px;
+
     .edit-area {
       text-align: center;
     }
@@ -491,6 +510,7 @@ $sub3: #1A535C;
     text-decoration: none;
     box-shadow: 5px 5px 10px $sub3;
     font-size: 1.1rem;
+
     &:hover {
       background-color: $theme3;
       color: $theme1;
@@ -520,6 +540,7 @@ $sub3: #1A535C;
   .main-contents.user-menus {
     margin-bottom: 60px;
     margin-top: 0;
+
     .contents-bar {
       .no-menus {
         margin: 0 auto;
@@ -532,22 +553,27 @@ $sub3: #1A535C;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     table {
       border-collapse: collapse;
       margin-bottom: 15px;
+
       th {
         border: 1px solid gray;
         padding: 10px;
         text-align: center;
         background-color: lightgray;
       }
+
       td {
         border: 1px solid lightgray;
         padding: 10px;
+
         .form-input {
           width: 100%;
           border: 1px solid #f3f3f3;
         }
+
         .form-select {
           width: 70%;
           border: 1px dotted #f3f3f3;
@@ -556,8 +582,9 @@ $sub3: #1A535C;
     }
   }
 
-  .button.edit {
+  .button.registration {
     margin-bottom: 40px;
+    margin-top: 25px;
   }
 
   // ログイン画面のリメンバー・ミー
@@ -568,6 +595,7 @@ $sub3: #1A535C;
   // エラーメッセージ（Userモデルとその他のモデルのエラーメッセージ）
   .error-explanation {
     margin-bottom: 15px;
+
     ul {
       li {
         list-style: none;
