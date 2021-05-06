@@ -58,7 +58,7 @@
   </div>
   <div class="button-area">
     <div class="edit-area">
-      <%= link_to "このメニューを削除する", menu_path(@menu), method: :delete, class: "button delete" %>
+      <%= link_to "このメニューを削除する", menu_path(@menu), method: :delete, class: "button delete", data: { confirm: "このメニューを削除しますか？" } %>
     </div>
   </div>
 </div>

@@ -19,7 +19,7 @@
         <%= link_to "登録店舗一覧", users_path, class: "header-link" %>
       </li>
       <li class="header-list last">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link"%>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link", data: {confirm: "ログアウトしますか？"} %>
       </li>
       <% else %>
       <li class="header-list">
