@@ -51,7 +51,7 @@ https://take-out-app.herokuapp.com/
 ### メニュー投稿
 ログインしている状態でメニューの新規投稿ができます。投稿されたメニューはトップページに新着順に表示されるほか、各店舗の詳細ページでも確認が可能です。
 
-![menu](https://user-images.githubusercontent.com/67499415/112926166-03abcf00-914e-11eb-903e-2fc135f3ab1c.gif)
+![menu](https://user-images.githubusercontent.com/67499415/119682356-ca59bc00-be7d-11eb-96a6-687ce901bb39.gif)
 
 ### 注文機能
 注文にログインは不要で、クレジットカードがあれば誰でも注文できるようになっています。メニューの詳細ページから注文ページに遷移できます。
@@ -61,7 +61,7 @@ https://take-out-app.herokuapp.com/
 ### メール送信機能
 注文のあったメニューの出品店舗様には注文メールが届きます。
 
-<img width="827" alt="ordermail" src="https://user-images.githubusercontent.com/67499415/111724996-92486280-88a9-11eb-8b03-71d54a1d1e30.png">
+![73c3516c9fea4bf5b1e5c36ec19a3b57](https://user-images.githubusercontent.com/67499415/119688372-e57afa80-be82-11eb-8f38-f8980771fd7d.gif
 
 ### 店舗の場所を表示
 各店舗の詳細ページでは、掲載されている店舗住所をもとにGoogleマップ上にマーカーを設置しています。これによりユーザーは注文の前後に店舗の場所を正確に確認でき、大変便利です。
