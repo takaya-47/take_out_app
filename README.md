@@ -61,7 +61,7 @@ https://take-out-app.herokuapp.com/
 ### メール送信機能
 注文のあったメニューの出品店舗様には注文メールが届きます。
 
-![73c3516c9fea4bf5b1e5c36ec19a3b57](https://user-images.githubusercontent.com/67499415/119688372-e57afa80-be82-11eb-8f38-f8980771fd7d.gif
+![73c3516c9fea4bf5b1e5c36ec19a3b57](https://user-images.githubusercontent.com/67499415/119688372-e57afa80-be82-11eb-8f38-f8980771fd7d.gif)
 
 ### 店舗の場所を表示
 各店舗の詳細ページでは、掲載されている店舗住所をもとにGoogleマップ上にマーカーを設置しています。これによりユーザーは注文の前後に店舗の場所を正確に確認でき、大変便利です。
