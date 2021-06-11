@@ -76,5 +76,3 @@ gem 'payjp'
 gem 'rails-i18n'
 # AWSのS3に画像保存先を変更するためのgem
 gem "aws-sdk-s3", require: false
-# AWSのSESを使用するためのgem
-gem 'aws-ses'
