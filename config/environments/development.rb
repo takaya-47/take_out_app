@@ -36,7 +36,10 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # deviseをインストールしたときの指示にあったので転記(パスワードリセットメール送信のときのホストを指定する)
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # 上記を以下のように変更（AWSのSESを使用してメール送信するため）
+  config.action_mailer.default_url_options = { host: 'https://www.takeoutgohan.net/' }
+  config.action_mailer.delivery_method = :aws_sdk
 
   # 注文お知らせメールに画像を添付するための設定(メールビューではimage_tagヘルパーメソッドを使う)
   # config.action_mailer.asset_host = 'http://localhost:3000/'

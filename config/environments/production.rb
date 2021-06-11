@@ -67,19 +67,22 @@ Rails.application.configure do
   # メール送信に失敗したときにエラーを検知するためにtrueに変更しておく
   config.action_mailer.raise_delivery_errors = true
 
-  # herokuのMailgunを使用するための設定
-  config.action_mailer.delivery_method = :smtp
-  host = 'https://take-out-app.herokuapp.com/'
-  config.action_mailer.default_url_options = { host: host }
-  ActionMailer::Base.smtp_settings = {
-  :port           => ENV['MAILGUN_SMTP_PORT'],
-  :address        => ENV['MAILGUN_SMTP_SERVER'],
-  :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-  :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  :domain         => host,
-  :authentication => :plain,
-}
-ActionMailer::Base.delivery_method = :smtp
+  # # herokuのMailgunを使用するための設定
+  # config.action_mailer.delivery_method = :smtp
+  # host = 'https://take-out-app.herokuapp.com/'
+  # config.action_mailer.default_url_options = { host: host }
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => ENV['MAILGUN_SMTP_PORT'],
+  #   :address        => ENV['MAILGUN_SMTP_SERVER'],
+  #   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  #   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  #   :domain         => host,
+  #   :authentication => :plain,
+  # }
+  # ActionMailer::Base.delivery_method = :smtp
+  # 上記のHerokuの設定を以下の通り変更
+  config.action_mailer.default_url_options = { host: 'https://www.takeoutgohan.net/' }
+  config.action_mailer.delivery_method = :aws_sdk
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
