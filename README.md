@@ -8,7 +8,7 @@ TakeOutApp
 
 
 # URL
-https://take-out-app.herokuapp.com/
+https://www.takeoutgohan.net/
 
 
 # テスト用アカウント
@@ -37,6 +37,10 @@ https://take-out-app.herokuapp.com/
 ### メニュー注文機能
 メニューの注文ができるよう注文機能を実装します。支払いも済ませておくことでサイトの利便性を上げるため、クレジットカード決済ができるようにします。
 また、注文時に店舗側に注文があったことを知らせるための通知機能を実装します。
+※注文機能におけるクレジットカード決済は現在テストカードでのみの決済となっています。
+テストカード番号：4242424242424242
+テストカードCVC：123
+有効期限：現在より未来であればいつでも可
 
 ### 店舗の場所表示機能
 お客様が注文前や注文後に店舗の場所を把握できるようにGoogleマップを用いて地図を掲載します。
@@ -46,7 +50,8 @@ https://take-out-app.herokuapp.com/
 ### 飲食店の登録
 ヘッダーの「新規登録」から新規登録していただくと、フラッシュメッセージが表示されて新規登録が完了し、トップページ下部の新着欄に自身の店舗が表示されます。
 
-![registration](https://user-images.githubusercontent.com/67499415/112926067-deb75c00-914d-11eb-8acd-c81ecb7d6632.gif)
+![34cf7de2d6c846caa114637fb15f085b](https://user-images.githubusercontent.com/67499415/121831941-c219d180-cd03-11eb-911c-86ba58b8a16a.gif)
+
 
 ### メニュー投稿
 ログインしている状態でメニューの新規投稿ができます。投稿されたメニューはトップページに新着順に表示されるほか、各店舗の詳細ページでも確認が可能です。
@@ -56,7 +61,7 @@ https://take-out-app.herokuapp.com/
 ### 注文機能
 注文にログインは不要で、クレジットカードがあれば誰でも注文できるようになっています。メニューの詳細ページから注文ページに遷移できます。
 
-![order](https://user-images.githubusercontent.com/67499415/112926260-263de800-914e-11eb-9c4c-cada1869ad44.gif)
+![1b310231465465ad6db76a9b623b6f65](https://user-images.githubusercontent.com/67499415/121832310-bc70bb80-cd04-11eb-8fcf-b080e31f9685.gif)
 
 ### メール送信機能
 注文のあったメニューの出品店舗様には注文メールが届きます。
@@ -65,8 +70,8 @@ https://take-out-app.herokuapp.com/
 
 ### 店舗の場所を表示
 各店舗の詳細ページでは、掲載されている店舗住所をもとにGoogleマップ上にマーカーを設置しています。これによりユーザーは注文の前後に店舗の場所を正確に確認でき、大変便利です。
-![googlemap](https://user-images.githubusercontent.com/67499415/112926365-4d94b500-914e-11eb-81af-4418d5a0b4cc.gif)
 
+![1331198da9e7da9939c160d0487d2988](https://user-images.githubusercontent.com/67499415/121832524-37d26d00-cd05-11eb-8c7f-88e3b48371e8.gif)
 
 # 今後の実装予定
 注文者に注文確認メールを送信する機能が欲しいとの声をいただいているので、今後実装予定です。
@@ -148,11 +153,13 @@ Maps JavaScript API, Geocoding API
 MySQL
 
 # 本番環境
-Heroku
-※アドオン：Mailgun
+AWS（EC2, Route53, ACM, S3, SES）
+
+# デプロイツール
+Capistrano
 
 # ソース管理
-GitHub, GitHub Desktop
+GitHub
 
 # テスト
 RSpec
