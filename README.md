@@ -147,7 +147,7 @@ Ruby, Ruby on Rails
 HTML, CSS, Sass, JavaScript
 
 ### API
-Maps JavaScript API, Geocoding API
+Maps JavaScript API, Geocoding API, PAY.JP API
 
 # データベース
 MySQL
